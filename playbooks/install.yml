@@ -1,0 +1,49 @@
+---
+- name: Install Software
+  hosts: laptop
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: Update system
+    import_role: 
+      name: robertdebock.update
+    vars:
+      update_reboot: no
+  
+  - name: Install pip
+    import_role: 
+      name: geerlingguy.pip
+
+  - name: Install DNF Packages
+    package:
+      name: "{{ dnf_packages }}"
+      state: present
+
+  - name: Install Snap Packages
+    snap:
+      name: "{{ snap_packages }}"
+
+  - name: Install Oh_My_Zsh
+    import_role: 
+      name: gantsign.oh-my-zsh
+    vars:
+      users:
+      - username: mono
+        oh_my_zsh:
+          theme: gnzh
+          plugins:
+            - git
+
+  - name: Copy aliases file
+    copy:
+      src: ../files/aliases
+      dest: ~/.alias
+      mode: 0600
+    become: no
+  
+  - name: Add aliases to zsh
+    lineinfile:
+      path: ~/.zshrc
+      regexp: '.alias$'
+      line: source $HOME/.alias
+    become: no

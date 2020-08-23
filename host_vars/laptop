@@ -1,0 +1,17 @@
+dnf_packages:
+  - bashtop
+  - code
+  - docker
+  - git
+  - steam
+  - zsh
+  - ShellCheck
+  - VirtualBox
+
+dnf_packages_absent:
+
+snap_packages:
+  - hiri
+  - shotcut
+  - spotify
+  - yq

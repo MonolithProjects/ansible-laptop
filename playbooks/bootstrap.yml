@@ -1,0 +1,48 @@
+---
+- name: Bootstrap laptop
+  hosts: laptop
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: Connection test
+    ping:
+
+  - name: Set Microsoft Repo
+    yum_repository:
+      name: code
+      description: vscode
+      file: vscode
+      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+      baseurl: https://packages.microsoft.com/yumrepos/vscode
+  
+  - name: Set Slack Repo
+    yum_repository:
+      name: slack
+      description: Slack
+      file: slack
+      gpgkey: https://slack.com/gpg/slack_pubkey_2019.gpg
+      baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/{{ ansible_distribution_major_version }}/{{ ansible_machine }}"
+  
+  - name: Set VirtualBox Repo
+    yum_repository:
+      name: virtualbox
+      description: Fedora $releasever - $basearch - VirtualBox
+      file: virtualbox
+      gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
+      baseurl: http://download.virtualbox.org/virtualbox/rpm/fedora/$releasever/$basearch
+
+  - name: Set Brave Repo
+    yum_repository:
+      name: brave-browser
+      description: Brave browser
+      file: brave-browser
+      baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+
+  - name: Install EPEL Repo
+    import_role: 
+      name: robertdebock.epel
+
+  - name: Install RPM Fusion
+    dnf:
+      name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+      state: present

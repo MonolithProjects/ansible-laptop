@@ -1,0 +1,10 @@
+---
+# tasks file for epel
+- name: install epel-release
+  package:
+    name: "{{ epel_url }}"
+    state: present
+  notify:
+    - yum update cache
+  when:
+    - ansible_distribution in [ "CentOS", "RedHat", "Amazon" ]

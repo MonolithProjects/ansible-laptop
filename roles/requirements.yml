@@ -1,0 +1,19 @@
+---
+#  ansible-galaxy install -f -r ./roles/requirements.yml --roles-path=./roles
+- src:     geerlingguy.docker
+  version: master
+
+- src:     geerlingguy.pip
+  version: master
+
+- src:     robertdebock.epel
+  version: master
+
+- src:     robertdebock.update
+  version: master
+
+# - src:     monolithprojects.system_update
+#   version: master
+
+- src:     gantsign.oh-my-zsh
+  version: master

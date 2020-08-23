@@ -1,0 +1,10 @@
+- name: Bootstrap laptop
+  import_playbook: playbooks/bootstrap.yml
+  tags: 
+    - install
+    - bootstrap
+
+- name: Install software
+  import_playbook: playbooks/install.yml
+  tags: 
+    - install
