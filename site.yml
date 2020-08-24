@@ -8,3 +8,9 @@
   import_playbook: playbooks/install.yml
   tags: 
     - install
+
+- name: Configurations
+  import_playbook: playbooks/configs.yml
+  tags: 
+    - install
+    - config
