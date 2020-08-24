@@ -59,3 +59,6 @@
       name: snapd
       state: present
     notify: start snapd
+
+  - name: Flush handlers
+    meta: flush_handlers
