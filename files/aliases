@@ -3,12 +3,12 @@
    alias forti-ravpn="sudo openfortivpn -c /etc/openfortivpn/my-config-ravpn"
    alias forti-ro="sudo openfortivpn -c /etc/openfortivpn/my-config-romania"
    #alias openvpn-dt="sudo openvpn --config /etc/openvpn/client/pannet-vpn-client.ovpn"
-   alias cddt="cd /home/mono/Documents/NFVI/"
-   alias cdhm="cd /home/mono/Documents/HOME_PROJECTS/"
-   alias cdos="cd /home/mono/Documents/NFVI/_openrc/; bash"
-   alias os="/home/mono/.local/bin/openstack"
-   alias postman="/home/mono/Documents/apps/Postman/Postman"
-   alias watchvms='watch "/home/mono/.local/bin/openstack server list -c ID -c Name -c Status"'
+   alias cddt="cd /home/mike/Documents/NFVI/"
+   alias cdhm="cd /home/mike/Documents/HOME_PROJECTS/"
+   alias cdos="cd /home/mike/Documents/NFVI/_openrc/; bash"
+   alias os="/home/mike/.local/bin/openstack"
+   alias postman="/home/mike/Documents/apps/Postman/Postman"
+   alias watchvms='watch "/home/mike/.local/bin/openstack server list -c ID -c Name -c Status"'
    alias lh="ls -ld .?*"   
 
 # vpn aliases
