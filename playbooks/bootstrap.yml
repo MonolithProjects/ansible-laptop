@@ -58,4 +58,4 @@
     package:
       name: snapd
       state: present
-    notofy: start snapd
+    notify: start snapd
