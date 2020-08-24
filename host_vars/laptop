@@ -1,5 +1,7 @@
 dnf_packages:
   - bashtop
+  - brave-keyring
+  - brave-browser
   - code
   - docker
   - git
