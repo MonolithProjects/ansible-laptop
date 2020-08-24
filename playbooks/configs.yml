@@ -17,8 +17,8 @@
       line: '"\e[B": history-search-forward'
 
   - name: Copy aliases file
-    copy:
-      src: ../files/aliases
+    template:
+      src: ../templates/aliases
       dest: ~/.alias
       mode: 0600
     become: no
