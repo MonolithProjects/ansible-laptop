@@ -23,8 +23,11 @@
       description: Slack
       file: slack
       gpgkey: https://slack.com/gpg/slack_pubkey_2019.gpg
-      baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/{{ ansible_distribution_major_version }}/{{ ansible_machine }}"
+      baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/31/{{ ansible_machine }}"
+      # No slack repo for fedora 32 :-(
+      #  baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/{{ ansible_distribution_major_version }}/{{ ansible_machine }}"
   
+
   - name: Set VirtualBox Repo
     yum_repository:
       name: virtualbox
