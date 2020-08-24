@@ -1,0 +1,17 @@
+---
+- name: System tuning
+  hosts: laptop
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: CLI history backward
+      lineinfile:
+        path: /etc/inputrc
+        regexp: ' history-search-backward$'
+        line: '"\e[A": history-search-backward'
+
+    - name: CLI history forward
+      lineinfile:
+        path: /etc/inputrc
+        regexp: ' history-search-forward'
+        line: '"\e[B": history-search-forward'
