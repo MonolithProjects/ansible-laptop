@@ -4,14 +4,35 @@
   become: yes
   gather_facts: yes
   tasks:
-    - name: CLI history backward
-      lineinfile:
-        path: /etc/inputrc
-        regexp: ' history-search-backward$'
-        line: '"\e[A": history-search-backward'
+  - name: CLI history backward
+    lineinfile:
+      path: /etc/inputrc
+      regexp: ' history-search-backward$'
+      line: '"\e[A": history-search-backward'
 
-    - name: CLI history forward
-      lineinfile:
-        path: /etc/inputrc
-        regexp: ' history-search-forward'
-        line: '"\e[B": history-search-forward'
+  - name: CLI history forward
+    lineinfile:
+      path: /etc/inputrc
+      regexp: ' history-search-forward'
+      line: '"\e[B": history-search-forward'
+
+  - name: Copy aliases file
+    copy:
+      src: ../files/aliases
+      dest: ~/.alias
+      mode: 0600
+    become: no
+  
+  - name: Add aliases to zsh
+    lineinfile:
+      path: ~/.zshrc
+      regexp: '.alias$'
+      line: source $HOME/.alias
+    become: no
+
+  - name: Add path to zsh
+    lineinfile:
+      path: ~/.zshrc
+      regexp: '^export PATH='
+      line: export PATH=$PATH:$HOME/.local/bin
+    become: no

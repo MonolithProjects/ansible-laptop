@@ -44,17 +44,3 @@
           theme: gnzh
           plugins:
             - git
-
-  - name: Copy aliases file
-    copy:
-      src: ../files/aliases
-      dest: ~/.alias
-      mode: 0600
-    become: no
-  
-  - name: Add aliases to zsh
-    lineinfile:
-      path: ~/.zshrc
-      regexp: '.alias$'
-      line: source $HOME/.alias
-    become: no
