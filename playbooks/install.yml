@@ -26,6 +26,7 @@
   - name: Install Snap Packages (Classic)
     snap:
       name: "{{ snap_packages_classic }}"
+      classic: yes
   
   - name: Install pip packages
     pip:
