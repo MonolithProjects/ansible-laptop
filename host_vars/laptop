@@ -3,7 +3,10 @@ dnf_packages:
   - code
   - docker
   - git
+  - gnome-tweak-tool
   - steam
+  - telegram-desktop
+  - virt-manager
   - zsh
   - ShellCheck
   - VirtualBox
@@ -15,3 +18,12 @@ snap_packages:
   - shotcut
   - spotify
   - yq
+
+pip_packages:
+  - ansible-lint
+  - flake8
+  - molecule
+  - python-cinderclient
+  - python-keystoneclient 
+  - python-novaclient
+  - python-openstackclient

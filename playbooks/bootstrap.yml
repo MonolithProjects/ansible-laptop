@@ -42,7 +42,12 @@
     import_role: 
       name: robertdebock.epel
 
-  - name: Install RPM Fusion
+  - name: Install RPM Fusion Free
     dnf:
       name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+      state: present
+
+  - name: Install RPM Fusion Non-Free
+    dnf:
+      name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
       state: present

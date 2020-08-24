@@ -22,6 +22,12 @@
   - name: Install Snap Packages
     snap:
       name: "{{ snap_packages }}"
+  
+  - name: Install pip packages
+    pip:
+      name: "{{ pip_packages }}"
+      extra_args: --user
+    become: no
 
   - name: Install Oh_My_Zsh
     import_role: 
