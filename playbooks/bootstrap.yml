@@ -3,6 +3,8 @@
   hosts: laptop
   become: yes
   gather_facts: yes
+  handlers:
+  - import_tasks: ../handlers/main.yml
   tasks:
   - name: Connection test
     ping:
@@ -51,3 +53,9 @@
     dnf:
       name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
       state: present
+
+  - name: Install snapd
+    package:
+      name: snapd
+      state: present
+    notofy: start snapd

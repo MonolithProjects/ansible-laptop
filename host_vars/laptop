@@ -4,7 +4,6 @@ dnf_packages:
   - docker
   - git
   - gnome-tweak-tool
-  - snapd
   - steam
   - telegram-desktop
   - virt-manager
