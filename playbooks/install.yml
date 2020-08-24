@@ -39,7 +39,7 @@
       name: gantsign.oh-my-zsh
     vars:
       users:
-      - username: mono
+      - username: mike
         oh_my_zsh:
           theme: gnzh
           plugins:
