@@ -1,0 +1,6 @@
+---
+- name: start snapd
+  become: yes
+  systemd:
+    name: snapd
+    state: started
