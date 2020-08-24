@@ -22,6 +22,10 @@
   - name: Install Snap Packages
     snap:
       name: "{{ snap_packages }}"
+
+  - name: Install Snap Packages (Classic)
+    snap:
+      name: "{{ snap_packages_classic }}"
   
   - name: Install pip packages
     pip:

@@ -15,9 +15,11 @@ dnf_packages_absent:
 
 snap_packages:
   - hiri
-  - shotcut
   - spotify
   - yq
+
+snap_packages_classic:
+  - shotcut
 
 pip_packages:
   - ansible-lint
