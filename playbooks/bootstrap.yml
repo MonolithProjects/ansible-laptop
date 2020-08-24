@@ -59,6 +59,12 @@
       name: snapd
       state: present
     notify: start snapd
+  
+  - name: Create /snap for Snap calssic
+    file:
+      path: /snap
+      mode: '0755'
+      state: directory
 
   - name: Flush handlers
     meta: flush_handlers
