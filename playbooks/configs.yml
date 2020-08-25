@@ -60,6 +60,12 @@
       src: ../files/resolv.conf.pannet
       dest: /etc/resolv.conf.pannet
       mode: 0644
+  
+  - name: Link to /run/systemd/resolve/resolv.conf
+    file:
+      src: /run/systemd/resolve/resolv.conf
+      dest: /etc/resolv.conf
+      state: link
 
   - name: Enable and start systemd-resolved
     systemd:
