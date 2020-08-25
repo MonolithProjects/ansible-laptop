@@ -54,3 +54,9 @@
       src: ../files/update-systemd-resolved
       dest: /etc/openvpn/scripts/update-systemd-resolved
       mode: 0755
+
+  - name: Enable and start systemd-resolved
+    systemd:
+      name: systemd-resolved
+      enabled: yes
+      state: started
