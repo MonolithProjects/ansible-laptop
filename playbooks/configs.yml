@@ -55,7 +55,7 @@
       dest: /etc/openvpn/scripts/update-systemd-resolved
       mode: 0755
 
- - name: Copy resolv conf pannet
+  - name: Copy resolv conf pannet
     copy:
       src: ../files/resolv.conf.pannet
       dest: /etc/resolv.conf.pannet
