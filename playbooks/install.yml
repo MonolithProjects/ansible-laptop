@@ -39,7 +39,7 @@
       name: gantsign.oh-my-zsh
     vars:
       users:
-      - username: mike
+      - username: "{{ lookup('env', 'USER') }}"
         oh_my_zsh:
           theme: gnzh
           plugins:

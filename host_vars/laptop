@@ -6,7 +6,9 @@ dnf_packages:
   - docker
   - git
   - gnome-tweak-tool
+  - openvpn
   - python3-devel
+  - sshuttle
   - slack
   - steam
   - telegram-desktop
