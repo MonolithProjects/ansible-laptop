@@ -42,3 +42,9 @@
       src: ../templates/openvpn-dt
       dest: /usr/bin/openvpn-dt
       mode: 0755
+
+  - name: Copy update-systemd-resolved
+    copy:
+      src: ../files/update-systemd-resolved
+      dest: /etc/openvpn/scripts/update-systemd-resolved
+      mode: 0755
