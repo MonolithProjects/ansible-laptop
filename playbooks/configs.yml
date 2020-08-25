@@ -36,3 +36,9 @@
       regexp: '^export PATH='
       line: export PATH=$PATH:$HOME/.local/bin
     become: no
+
+  - name: Copy openvpn-dt script file
+    template:
+      src: ../templates/openvpn-dt
+      dest: /usr/bin/openvpn-dt
+      mode: 0755
