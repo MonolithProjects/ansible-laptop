@@ -43,6 +43,12 @@
       dest: /usr/bin/openvpn-dt
       mode: 0755
 
+  - name: Create /etc/openvpn/scripts/
+    file:
+      path: /etc/openvpn/scripts
+      state: directory
+      recurse: yes
+
   - name: Copy update-systemd-resolved
     copy:
       src: ../files/update-systemd-resolved
