@@ -7,6 +7,7 @@ dnf_packages:
   - git
   - gnome-tweak-tool
   - openvpn
+  - openvpn-systemd-resolved
   - python3-devel
   - sshuttle
   - solaar
