@@ -79,3 +79,20 @@
       name: docker
       enabled: yes
       state: started
+
+  - name: Create a volume portainer_data
+    docker_volume:
+      name: portainer_data
+
+  - name: portainer
+    docker_container:
+      name: portainer
+      image: portainer:latest
+      pull: yes
+      state: started
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - portainer_data:/data
+      env:
+        TZ: "CET"
+      
