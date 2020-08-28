@@ -73,3 +73,9 @@
       name: systemd-resolved
       enabled: yes
       state: started
+
+  - name: Eanble and start docker
+    systemd:
+      name: docker
+      enabled: yes
+      state: started
