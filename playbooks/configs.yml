@@ -81,22 +81,23 @@
       state: started
     ### F32 is using cgroup v2. You may need  "GRUB_CMDLINE_LINUX= systemd.unified_cgroup_hierarchy=0" in /etc/default/grub + grub2-mkconfig
 
-  # - name: Create a volume portainer_data
-  #   docker_volume:
-  #     name: portainer_data
+  - name: Create a volume portainer_data
+    docker_volume:
+      name: portainer_data
 
-  # - name: portainer
-  #   docker_container:
-  #     name: portainer
-  #     image: portainer/portainer:latest
-  #     pull: yes
-  #     state: started
-  #     privileged: yes
-  #     volumes:
-  #       - /var/run/docker.sock:/var/run/docker.sock
-  #       - portainer_data:/data
-  #     ports:
-  #       - "9000:9000"
-  #     env:
-  #       TZ: "CET"
+  - name: portainer
+    docker_container:
+      name: portainer
+      image: portainer/portainer:latest
+      command: -H unix:///var/run/docker.sock
+      pull: yes
+      state: started
+      privileged: yes
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - portainer_data:/data
+      ports:
+        - "9000:9000"
+      env:
+        TZ: "CET"
       

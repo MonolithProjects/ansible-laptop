@@ -5,6 +5,7 @@ dnf_packages:
   - code
   - git
   - gnome-tweak-tool
+  - jack-audio-connection-kit-dbus
   - moby-engine
   - openvpn
   - python3-devel
@@ -20,7 +21,6 @@ dnf_packages:
 
 dnf_packages_absent:
   - docker
-  - moby-engine
 
 snap_packages:
   - hiri
