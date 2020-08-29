@@ -9,6 +9,8 @@
   - name: Connection test
     ping:
 
+######### DNF Repositories ############
+
   - name: Set Microsoft Repo
     yum_repository:
       name: code
@@ -63,6 +65,8 @@
     dnf:
       name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
       state: present
+
+######### Snap ########################
 
   - name: Install snapd
     package:
