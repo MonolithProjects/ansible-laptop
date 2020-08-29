@@ -14,6 +14,11 @@
     import_role: 
       name: geerlingguy.pip
 
+  - name: Uninstall DNF Packages
+    package:
+      name: "{{ dnf_packages_absent }}"
+      state: absent
+
   - name: Install DNF Packages
     package:
       name: "{{ dnf_packages }}"
@@ -33,6 +38,10 @@
       name: "{{ pip_packages }}"
       extra_args: --user
     become: no
+
+  # - name: Install Docker-ce
+  #   import_role: 
+  #     name: geerlingguy.docker
 
   - name: Install Oh_My_Zsh
     import_role: 

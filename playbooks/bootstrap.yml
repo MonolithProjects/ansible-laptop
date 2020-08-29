@@ -27,6 +27,13 @@
       # No slack repo for fedora 32 :-(
       #  baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/{{ ansible_distribution_major_version }}/{{ ansible_machine }}"
   
+  - name: Set Docker package Repo
+    yum_repository:
+      name: docker
+      description: Docker dnf Repo
+      file: docker
+      gpgkey: https://download.docker.com/linux/fedora/gpg
+      baseurl: https://download.docker.com/linux/fedora/31/$basearch/stable
 
   - name: Set VirtualBox Repo
     yum_repository:

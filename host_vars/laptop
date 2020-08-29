@@ -3,11 +3,10 @@ dnf_packages:
   - brave-keyring
   - brave-browser
   - code
-  - docker
   - git
   - gnome-tweak-tool
+  - moby-engine
   - openvpn
-  - openvpn-systemd-resolved
   - python3-devel
   - sshuttle
   - solaar
@@ -20,6 +19,8 @@ dnf_packages:
   - VirtualBox
 
 dnf_packages_absent:
+  - docker
+  - moby-engine
 
 snap_packages:
   - hiri
@@ -31,6 +32,7 @@ snap_packages_classic:
 
 pip_packages:
   - ansible-lint
+  - docker
   - flake8
   - molecule
   - python-cinderclient
