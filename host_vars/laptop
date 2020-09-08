@@ -3,10 +3,15 @@ dnf_packages:
   - brave-keyring
   - brave-browser
   - code
+  - chromium
   - git
+  - gcc
   - gnome-tweak-tool
   - jack-audio-connection-kit-dbus
+  - kernel-devel
+  - make
   - moby-engine
+  - openfortivpn
   - openvpn
   - pinta
   - python3-devel
@@ -16,9 +21,10 @@ dnf_packages:
   - steam
   - telegram-desktop
   - virt-manager
+  - youtube-dl
   - zsh
   - ShellCheck
-  - VirtualBox
+  - VirtualBox-6.1-6.1.14_140239_fedora32-1.x86_64
 
 dnf_packages_absent:
   - docker
