@@ -15,10 +15,12 @@ dnf_packages:
   - openvpn
   - pinta
   - python3-devel
+  - python3-smbc
   - sshuttle
   - solaar
   - slack
   - steam
+  - system-config-printer
   - telegram-desktop
   - virt-manager
   - youtube-dl
