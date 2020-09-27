@@ -10,6 +10,7 @@
    alias postman="/home/{{ ansible_user }}/Documents/apps/Postman/Postman"
    alias watchvms='watch "/home/{{ ansible_user }}/.local/bin/openstack server list -c ID -c Name -c Status"'
    alias lh="ls -ld .?*"   
+   alias k=kubectl
 
 # vpn aliases
    alias vpn-ml="sshuttle -r mmuransky@darjump 172.16.2.0/24"

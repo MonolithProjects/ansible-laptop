@@ -86,10 +86,11 @@
       name: portainer_data
 
   - name: portainer
-    docker_container:
+    community.general.docker_container:
       name: portainer
       image: portainer/portainer:latest
       command: -H unix:///var/run/docker.sock
+      container_default_behavior: compatibility
       pull: yes
       state: started
       privileged: yes
