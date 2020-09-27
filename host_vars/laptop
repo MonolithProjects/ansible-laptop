@@ -37,6 +37,8 @@ snap_packages:
   - yq
 
 snap_packages_classic:
+  - helm
+  - kubectl
   - shotcut
 
 pip_packages:
