@@ -1,20 +1,17 @@
-name: molecule test
+name: Ansible lint
 
-on:
-    push:
-        branches:
-            - master
+on: [push, pull_request]
 
 jobs:
-    ansible_lint:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v2
-          - name: Lint Ansible Playbook
-            uses: ansible/ansible-lint-action@master
-            with:
-              targets: |
-                site.yml
-                playbooks/bootstrap.yml
-                playbooks/configs.yml
-                playbooks/install.yml
+  ansible_lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint Ansible Playbook
+        uses: ansible/ansible-lint-action@master
+        with:
+          targets: |
+            site.yml
+            playbooks/bootstrap.yml
+            playbooks/configs.yml
+            playbooks/install.yml
