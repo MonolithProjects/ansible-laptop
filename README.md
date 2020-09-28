@@ -2,7 +2,11 @@
 
 # What's this?
 
-Ansible playbook to configure my laptop...
+Ansible playbook to configure my laptop.
+
+## Where are the software packages
+
+Gues where... In the host vars.
 
 ## How to
 
