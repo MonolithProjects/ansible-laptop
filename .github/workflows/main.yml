@@ -19,5 +19,5 @@ jobs:
             -e MY_GID=1000 \
             -v $HOME/.ssh/:/root/.ssh/:ro \
             -v $GITHUB_WORKSPACE:/data \
-            cytopia/ansible:latest-tools ansible-playbook site.yml --tags deploy
+            cytopia/ansible:latest-tools ansible-playbook site.yml
           shell: bash
