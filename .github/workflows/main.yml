@@ -4,19 +4,16 @@ on:
     push:
         branches:
             - master
-
-    schedule:
-        - cron: '0 6 1 * 0'
+            
 jobs:
-    run_ansible:
-        runs-on: monolithprojects/systemd-fedora32:latest
-        if: "!contains(github.event.head_commit.message, 'skip-ci')"
-        steps:
-        - uses: actions/checkout@master
-        - name: Install Prereqs
-          run: |
-            sudo pip3 install --no-cache-dir ansible
-        - name: ITest playbook
-          run: |
-            ansible-playbook  -vvv --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3'
-          shell: bash
+    ansible_lint:
+        runs-on: ubuntu-latest
+        - uses: actions/checkout@v2
+        - name: Lint Ansible Playbook
+          uses: ansible/ansible-lint-action@master
+          with:
+            targets: |
+              site.yml
+              playbooks/bootstrap.yml
+              playbooks/configs.yml
+              playbooks/install.yml
