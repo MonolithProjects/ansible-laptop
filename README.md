@@ -1,3 +1,5 @@
+[![Ansible lint](https://github.com/MonolithProjects/ansible-laptop/workflows/Ansible%20lint/badge.svg)](https://github.com/MonolithProjects/ansible-laptop/actions)
+
 # What's this?
 
 Ansible playbook to configure my laptop...
