@@ -1,0 +1,23 @@
+name: molecule test
+
+on:
+    push:
+        branches:
+            - master
+
+    schedule:
+        - cron: '0 6 1 * 0'
+jobs:
+    run_ansible:
+        runs-on: self-hosted
+        if: "!contains(github.event.head_commit.message, 'skip-ci')"
+        steps:
+        - uses: actions/checkout@master
+        - run: |
+            docker run --rm \
+            -e MY_UID=1000 \
+            -e MY_GID=1000 \
+            -v $HOME/.ssh/:/root/.ssh/:ro \
+            -v $GITHUB_WORKSPACE:/data \
+            cytopia/ansible:latest-tools ansible-playbook site.yml --tags deploy
+          shell: bash
