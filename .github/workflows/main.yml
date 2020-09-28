@@ -4,16 +4,17 @@ on:
     push:
         branches:
             - master
-            
+
 jobs:
     ansible_lint:
         runs-on: ubuntu-latest
-        - uses: actions/checkout@v2
-        - name: Lint Ansible Playbook
-          uses: ansible/ansible-lint-action@master
-          with:
-            targets: |
-              site.yml
-              playbooks/bootstrap.yml
-              playbooks/configs.yml
-              playbooks/install.yml
+        steps:
+          - uses: actions/checkout@v2
+          - name: Lint Ansible Playbook
+            uses: ansible/ansible-lint-action@master
+            with:
+              targets: |
+                site.yml
+                playbooks/bootstrap.yml
+                playbooks/configs.yml
+                playbooks/install.yml
