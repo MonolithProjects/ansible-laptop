@@ -39,6 +39,10 @@
       extra_args: --user
     become: no
 
+  - name: Install HashiCorp tools
+    import_role:
+      name: mrlesmithjr.hashicorp-toolbox
+
   - name: Install Oh_My_Zsh
     import_role: 
       name: gantsign.oh-my-zsh

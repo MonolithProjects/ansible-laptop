@@ -1,5 +1,12 @@
 ---
 # tasks file for epel
+- name: install epel gpg key
+  rpm_key:
+    key: "{{ epel_gpg_key }}"
+    state: present
+  when:
+    - ansible_distribution in [ "Amazon", "CentOS", "RedHat" ]
+
 - name: install epel-release
   package:
     name: "{{ epel_url }}"
@@ -7,4 +14,4 @@
   notify:
     - yum update cache
   when:
-    - ansible_distribution in [ "CentOS", "RedHat", "Amazon" ]
+    - ansible_distribution in [ "Amazon", "CentOS", "RedHat" ]

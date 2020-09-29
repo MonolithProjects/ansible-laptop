@@ -17,3 +17,6 @@
 
 - src:     gantsign.oh-my-zsh
   version: master
+
+- src:     mrlesmithjr.hashicorp-toolbox
+  version: master
