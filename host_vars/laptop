@@ -59,14 +59,14 @@ hashicorp_tools:
   #   version: 0.10.3
   #   state: present
   - name: packer
-    version: 1.5.4
+    version: 1.6.3
     state: present
   - name: terraform
-    version: 0.12.20
+    version: 0.12.29
     state: present
   # - name: vagrant
   #   version: 2.2.7
   #   state: present
   - name: vault
-    version: 1.3.2
+    version: 1.5.4
     state: present
