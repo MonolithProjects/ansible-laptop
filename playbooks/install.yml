@@ -33,6 +33,11 @@
       name: "{{ snap_packages_classic }}"
       classic: yes
   
+  - name: Upgrade pip
+    pip: 
+      name: pip
+      extra_args: --upgrade
+
   - name: Install pip packages
     pip:
       name: "{{ pip_packages }}"

@@ -46,10 +46,12 @@ pip_packages:
   - docker
   - flake8
   - molecule
+  - openstack-heat
   - python-cinderclient
   - python-keystoneclient 
   - python-novaclient
   - python-openstackclient
+  - python-swiftclient
 
 hashicorp_tools:
   # - name: consul
