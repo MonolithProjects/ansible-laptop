@@ -23,6 +23,7 @@ dnf_packages:
   - system-config-printer
   - telegram-desktop
   - virt-manager
+  - yarn
   - youtube-dl
   - zsh
   - ShellCheck

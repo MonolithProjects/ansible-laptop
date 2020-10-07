@@ -52,6 +52,14 @@
       file: brave-browser
       baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
 
+  - name: Set Yarn Repo
+    yum_repository:
+      name: yarn
+      description: Yarn Repo
+      file: yarn
+      gpgkey: https://dl.yarnpkg.com/rpm/pubkey.gpg
+      baseurl: https://dl.yarnpkg.com/rpm/
+
   - name: Install EPEL Repo
     import_role: 
       name: robertdebock.epel
