@@ -16,6 +16,12 @@
       regexp: ' history-search-forward'
       line: '"\e[B": history-search-forward'
 
+  - name: Add mail server
+    lineinfile:
+      path: /etc/hosts
+      regexp: 'mail.dt-one.com$'
+      line: '10.239.107.6     mail.dt-one.com'
+
   - name: Copy aliases file
     template:
       src: ../templates/aliases

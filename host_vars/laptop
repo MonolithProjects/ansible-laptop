@@ -65,7 +65,7 @@ hashicorp_tools:
     version: 1.6.3
     state: present
   - name: terraform
-    version: 0.12.29
+    version: 0.13.4
     state: present
   # - name: vagrant
   #   version: 2.2.7
