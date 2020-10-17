@@ -18,7 +18,7 @@
       file: vscode
       gpgkey: https://packages.microsoft.com/keys/microsoft.asc
       baseurl: https://packages.microsoft.com/yumrepos/vscode
-  
+
   - name: Set Slack Repo
     yum_repository:
       name: slack
@@ -28,7 +28,7 @@
       baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/21/{{ ansible_machine }}"
       # No slack repo for fedora 32 :-(
       #  baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/{{ ansible_distribution_major_version }}/{{ ansible_machine }}"
-  
+
   - name: Set Docker package Repo
     yum_repository:
       name: docker
@@ -61,7 +61,7 @@
       baseurl: https://dl.yarnpkg.com/rpm/
 
   - name: Install EPEL Repo
-    import_role: 
+    import_role:
       name: robertdebock.epel
 
   - name: Install RPM Fusion Free

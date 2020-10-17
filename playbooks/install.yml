@@ -5,13 +5,13 @@
   gather_facts: yes
   tasks:
   - name: Update system
-    import_role: 
+    import_role:
       name: robertdebock.update
     vars:
       update_reboot: no
-  
+
   - name: Install pip
-    import_role: 
+    import_role:
       name: geerlingguy.pip
 
   - name: Uninstall DNF Packages
@@ -32,9 +32,9 @@
     snap:
       name: "{{ snap_packages_classic }}"
       classic: yes
-  
+
   - name: Upgrade pip
-    pip: 
+    pip:
       name: pip
       extra_args: --upgrade
 
@@ -49,7 +49,7 @@
       name: monolithprojects.hashicorp_tools
 
   - name: Install Oh_My_Zsh
-    import_role: 
+    import_role:
       name: gantsign.oh-my-zsh
     vars:
       users:

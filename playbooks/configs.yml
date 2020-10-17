@@ -24,11 +24,11 @@
 
   - name: Copy aliases file
     template:
-      src: ../templates/aliases
+      src: templates/aliases
       dest: ~/.alias
       mode: 0600
     become: no
-  
+
   - name: Add aliases to zsh
     lineinfile:
       path: ~/.zshrc
@@ -45,7 +45,7 @@
 
   - name: Copy openvpn-dt script file
     template:
-      src: ../templates/openvpn-dt
+      src: templates/openvpn-dt
       dest: /usr/bin/openvpn-dt
       mode: 0755
 
@@ -53,20 +53,21 @@
     file:
       path: /etc/openvpn/scripts
       state: directory
+      mode: 0755
       recurse: yes
 
   - name: Copy update-systemd-resolved
     copy:
-      src: ../files/update-systemd-resolved
+      src: files/update-systemd-resolved
       dest: /etc/openvpn/scripts/update-systemd-resolved
       mode: 0755
 
   - name: Copy resolv conf pannet
-    copy:
-      src: ../files/resolv.conf.pannet
+    template:
+      src: templates/resolv.conf.pannet.j2
       dest: /etc/resolv.conf.pannet
       mode: 0644
-  
+
   - name: Link to /run/systemd/resolve/stub-resolv.conf
     file:
       src: /run/systemd/resolve/stub-resolv.conf
@@ -107,4 +108,3 @@
         - "9000:9000"
       env:
         TZ: "CET"
-      
