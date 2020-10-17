@@ -1,7 +1,0 @@
-#!/bin/bash
-CONFIG_DIR=/etc/openvpn/client
-CONFIG=${CONFIG_DIR}/pannet-vpn-client.ovpn
-CREDENTIALS=${CONFIG_DIR}/credentials.secret
-read -n 6 -p '2nd step authentication (OTPtoken): ' OTPTOKEN
-sed -i "2s/.\{6\}$/${OTPTOKEN:?OTPToken missing}/" ${CREDENTIALS}
-openvpn --config ${CONFIG:?Config missing} --auth-user-pass ${CREDENTIALS:?Credentials missing} #--daemon
