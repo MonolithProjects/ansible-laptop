@@ -18,5 +18,5 @@
 - src:     gantsign.oh-my-zsh
   version: master
 
-- src:     mrlesmithjr.hashicorp-toolbox
+- src:     monolithprojects.hashicorp_tools
   version: master

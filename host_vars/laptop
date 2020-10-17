@@ -55,6 +55,9 @@ pip_packages:
   - python-swiftclient
 
 hashicorp_tools:
+  # - name: boundary
+  #   version: 0.1.0
+  #   state: present
   # - name: consul
   #   version: 1.7.0
   #   state: present
@@ -62,7 +65,7 @@ hashicorp_tools:
   #   version: 0.10.3
   #   state: present
   - name: packer
-    version: 1.6.3
+    version: 1.6.4
     state: present
   - name: terraform
     version: 0.13.4
@@ -72,4 +75,7 @@ hashicorp_tools:
   #   state: present
   - name: vault
     version: 1.5.4
+    state: present
+  - name: waypoint
+    version: 0.1.1
     state: present

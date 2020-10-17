@@ -41,12 +41,12 @@
   - name: Install pip packages
     pip:
       name: "{{ pip_packages }}"
-      extra_args: --user
+      extra_args: --user --upgrade
     become: no
 
   - name: Install HashiCorp tools
     import_role:
-      name: mrlesmithjr.hashicorp-toolbox
+      name: monolithprojects.hashicorp_tools
 
   - name: Install Oh_My_Zsh
     import_role: 
