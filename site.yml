@@ -1,17 +1,17 @@
 - name: Bootstrap laptop
   import_playbook: playbooks/bootstrap.yml
-  tags: 
+  tags:
     - install
     - bootstrap
 
 - name: Install software
   import_playbook: playbooks/install.yml
-  tags: 
+  tags:
     - install
     - update
 
 - name: Configurations
   import_playbook: playbooks/configs.yml
-  tags: 
+  tags:
     - install
     - config
