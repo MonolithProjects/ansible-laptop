@@ -1,0 +1,41 @@
+---
+  galaxy_info:
+    author: Michal Muransky
+    role_name: hashicorp_tools
+    description: Ansible Role used for Hashicorp tools installation/upgrade/uninstallation.
+    company: MonolithProjects
+    license: "license (MIT)"
+    min_ansible_version: 2.8.0
+    platforms:
+      - name: EL
+        versions:
+          - 6
+          - 7
+          - 8
+      - name: Fedora
+        versions:
+          - 28
+          - 29
+          - 30
+          - 31
+          - 32
+      - name: Debian
+        versions:
+          - buster
+          - stretch
+      - name: Ubuntu
+        versions:
+          - xenial
+          - bionic
+          - focal
+    galaxy_tags:
+      - hashicorp
+      - tools
+      - boundary
+      - consul
+      - nomad
+      - packer
+      - terraform
+      - vagrant
+      - vault
+      - waypoint

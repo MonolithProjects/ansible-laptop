@@ -1,0 +1,55 @@
+---
+- name: Checking already installed Hashicorp tools
+  stat:
+    path: "{{ install_dir }}/{{ item.name }}"
+  register: hashicorp_tools_installed
+  with_items: "{{ hashicorp_tools }}"
+
+- name: Capturing version of previously installed Consul, Nomad, Packer, Terraform, Vault, Waypoint
+  shell: |
+    set -o pipefail
+    "{{ install_dir }}/{{ item.item.name }}" version | \
+    grep -E 'Version Number: |Consul v|Nomad v|Packer v|Terraform v|Installed Version|Vault v|Waypoint v' | \
+    grep -Eo "([0-9]{1,}\.)+[0-9]{1,}"
+  args:
+    executable: /bin/bash
+  register: hashicorp_tools_installed_versions
+  with_items: "{{ hashicorp_tools_installed.results }}"
+  when:
+    - item.stat.exists
+
+- name: Upgrading Existing Tools
+  unarchive:
+    src: "{{ hashicorp_url }}/{{ item.item.item.name }}/{{ item.item.item.version }}/\
+    {{ item.item.item.name }}_{{ item.item.item.version }}_{{ ansible_system|lower }}_amd64.zip"
+    dest: "{{ install_dir }}"
+    mode: 0755
+    remote_src: true
+  with_items: "{{ hashicorp_tools_installed_versions.results }}"
+  when:
+    - item.item.item.state|lower == "present"
+    - item.item.stat.exists
+    - item.stdout is defined
+    - item.item.item.version != item.stdout
+
+- name: Installing tools
+  unarchive:
+    src: "{{ hashicorp_url }}/{{ item.item.item.name }}/{{ item.item.item.version }}/\
+    {{ item.item.item.name }}_{{ item.item.item.version }}_{{ ansible_system|lower }}_amd64.zip"
+    dest: "{{ install_dir }}"
+    mode: 0755
+    remote_src: true
+  with_items: "{{ hashicorp_tools_installed_versions.results }}"
+  when:
+    - item.item.item.state|lower == "present"
+    - not item.item.stat.exists
+
+- name: Uninstall tools
+  file:
+    path: "{{ install_dir }}/{{ item.item.item.name }}"
+    state: absent
+  with_items: "{{ hashicorp_tools_installed_versions.results }}"
+  when:
+    - item.item.stat.exists
+    - item.stdout is defined
+    - item.item.item.state|lower == "absent"
