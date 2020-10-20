@@ -23,6 +23,7 @@ dnf_packages:
   - git
   - gcc
   - gnome-tweak-tool
+  - h264enc
   - jack-audio-connection-kit-dbus
   - kernel-devel
   - make
