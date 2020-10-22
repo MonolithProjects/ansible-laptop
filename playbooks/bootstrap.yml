@@ -60,6 +60,12 @@
       gpgkey: https://dl.yarnpkg.com/rpm/pubkey.gpg
       baseurl: https://dl.yarnpkg.com/rpm/
 
+  - name: Enabled Gitflow repo
+    yum_repository:
+      name: elegos/gitflow
+      description: Gitflow repo
+      eanble: yes
+
   - name: Install EPEL Repo
     import_role:
       name: robertdebock.epel
