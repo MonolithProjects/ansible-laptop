@@ -64,7 +64,9 @@
     yum_repository:
       name: elegos/gitflow
       description: Gitflow repo
-      eanble: yes
+      file: copr:copr.fedorainfracloud.org:elegos:gitflow.repo
+      gpgkey: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/pubkey.gpg
+      baseurl: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/fedora-$releasever-$basearch/
 
   - name: Install EPEL Repo
     import_role:

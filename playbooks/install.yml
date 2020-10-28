@@ -38,11 +38,16 @@
       name: pip
       extra_args: --upgrade
 
-  - name: Install pip packages
+  - name: Install user pip packages
     pip:
       name: "{{ pip_packages }}"
       extra_args: --user --upgrade
     become: no
+
+  - name: Install global pip packages
+    pip:
+      name: "{{ global_pip_packages }}"
+      extra_args: --upgrade
 
   - name: Install HashiCorp tools
     import_role:

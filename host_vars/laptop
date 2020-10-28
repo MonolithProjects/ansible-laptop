@@ -47,7 +47,7 @@ dnf_packages:
   - youtube-dl
   - zsh
   - ShellCheck
-  - VirtualBox-6.1-6.1.14_140239_fedora32-1.x86_64
+  - VirtualBox.x86_64
 
 dnf_packages_absent:
   - docker
@@ -64,15 +64,18 @@ snap_packages_classic:
 
 pip_packages:
   - ansible-lint
-  - docker
   - flake8
   - molecule
+  - molecule-docker
   - openstack-heat
   - python-cinderclient
   - python-keystoneclient 
   - python-novaclient
   - python-openstackclient
   - python-swiftclient
+
+global_pip_packages:
+  - docker
 
 hashicorp_tools:
   # - name: boundary
