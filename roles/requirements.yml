@@ -12,9 +12,6 @@
 - src:     robertdebock.update
   version: master
 
-# - src:     monolithprojects.system_update
-#   version: master
-
 - src:     gantsign.oh-my-zsh
   version: master
 
