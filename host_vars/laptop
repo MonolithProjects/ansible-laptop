@@ -20,6 +20,7 @@ dnf_packages:
   - brave-browser
   - code
   - dnf-plugin-system-upgrade
+  - fish
   - chromium
   - git
   - gitflow
@@ -45,7 +46,6 @@ dnf_packages:
   - virt-manager
   - yarn
   - youtube-dl
-  - zsh
   - ShellCheck
   - VirtualBox.x86_64
 

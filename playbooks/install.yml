@@ -53,13 +53,13 @@
     import_role:
       name: monolithprojects.hashicorp_tools
 
-  - name: Install Oh_My_Zsh
-    import_role:
-      name: gantsign.oh-my-zsh
-    vars:
-      users:
-      - username: "{{ lookup('env', 'USER') }}"
-        oh_my_zsh:
-          theme: gnzh
-          plugins:
-            - git
+  # - name: Install Oh_My_Zsh
+  #   import_role:
+  #     name: gantsign.oh-my-zsh
+  #   vars:
+  #     users:
+  #     - username: "{{ lookup('env', 'USER') }}"
+  #       oh_my_zsh:
+  #         theme: gnzh
+  #         plugins:
+  #           - git
