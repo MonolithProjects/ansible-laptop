@@ -109,7 +109,7 @@
   - name: portainer
     docker_container:
       name: portainer
-      image: portainer/portainer:latest
+      image: portainer/portainer-ce:latest
       command: -H unix:///var/run/docker.sock
       container_default_behavior: compatibility
       pull: yes
