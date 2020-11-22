@@ -1,0 +1,35 @@
+---
+- name: Additions
+  hosts: laptop
+  become: no
+  gather_facts: yes
+  tasks:
+  - name: Get fisher - create temp file
+    tempfile:
+      state: file
+      suffix: fisher
+    register: tempfile
+    when: '"fish" in dnf_packages'
+
+  - name: Get fisher - download script
+    get_url:
+      url: https://git.io/fisher
+      dest: "{{ tempfile.path }}"
+      mode: '0755'
+    when: '"fish" in dnf_packages'
+
+  - name: Get fisher - run script
+    shell: source "{{ tempfile.path }}" && fisher install jorgebucaran/fisher
+    args:
+      executable: /usr/bin/fish
+    changed_when: false
+    when: '"fish" in dnf_packages'
+
+  - name: Add fish-kubectl-completions
+    shell: fisher install evanlucas/fish-kubectl-completions
+    args:
+      executable: /usr/bin/fish
+    changed_when: false
+    when: 
+      - '"fish" in dnf_packages'
+      - '"kubectl" in snap_packages_classic'

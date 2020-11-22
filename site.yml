@@ -15,3 +15,9 @@
   tags:
     - install
     - config
+
+- name: Additions
+  import_playbook: playbooks/additions.yml
+  tags:
+    - install
+    - additions
