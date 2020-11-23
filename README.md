@@ -20,3 +20,4 @@ Simply just run `ansible-playbook site.yml --ask-vault-pass`
 | bootstrap| Bootstrap the laptop (mostly adds repositories) |
 | update | Update or Install new software packages |
 | config | Config changes |
+| additions | Additional software dependent on tools in `install` part |
