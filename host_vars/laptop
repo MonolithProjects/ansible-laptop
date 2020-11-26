@@ -88,7 +88,7 @@ hashicorp_tools:
   #   state: present
   - name: packer
     version: 1.6.4
-    state: present
+    state: absent
   - name: terraform
     version: 0.13.5
     state: present
@@ -101,3 +101,9 @@ hashicorp_tools:
   - name: waypoint
     version: 0.1.1
     state: present
+
+fisher_addons:
+  - evanlucas/fish-kubectl-completions
+  - jorgebucaran/bax.fish
+  - jorgebucaran/fisher
+  - joseluisq/gitnow

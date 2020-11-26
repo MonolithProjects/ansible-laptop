@@ -4,6 +4,9 @@
   become: no
   gather_facts: yes
   tasks:
+
+######### Fish shell addons and customization ############
+
   - name: Get fisher - create temp file
     tempfile:
       state: file
@@ -33,3 +36,17 @@
     when: 
       - '"fish" in dnf_packages'
       - '"kubectl" in snap_packages_classic'
+
+  - name: Install/update addons
+    shell: fisher install "{{ item }}"
+    args:
+      executable: /usr/bin/fish
+    changed_when: false
+    with_items: "{{ fisher_addons }}"
+    when: '"fish" in dnf_packages'
+
+  - name: Copy Welcome screen
+    copy:
+      src: files/fish_greeting.fish
+      dest: "/home/{{ ansible_user }}/.config/fish/functions/fish_greeting.fish"
+      mode: 0600
