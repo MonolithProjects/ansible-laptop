@@ -6,5 +6,5 @@ function fish_greeting
  |  _| | \__ \ | | | \__ \ | | |  __/ | |
  |_|   |_|___/_| |_| |___/_| |_|\___|_|_|\n" | cat
 #    fish_logo blue cyan green
-    set_color cyan; printf " It is "; printf (date)"\n"
+    set_color cyan; printf "  It is "; printf (date)"\n"
 end
