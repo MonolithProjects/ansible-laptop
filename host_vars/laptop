@@ -103,6 +103,7 @@ hashicorp_tools:
     state: present
 
 fisher_addons:
+  - barnybug/docker-fish-completion
   - evanlucas/fish-kubectl-completions
   - jorgebucaran/bax.fish
   - jorgebucaran/fisher
