@@ -22,27 +22,6 @@
       regexp: 'mail.dt-one.com$'
       line: '10.239.107.6     mail.dt-one.com'
 
-  # - name: Copy aliases file
-  #   template:
-  #     src: templates/aliases.j2
-  #     dest: ~/.alias
-  #     mode: 0600
-  #   become: no
-
-  # - name: Add aliases to zsh
-  #   lineinfile:
-  #     path: ~/.zshrc
-  #     regexp: '.alias$'
-  #     line: source $HOME/.alias
-  #   become: no
-
-  # - name: Add path to zsh
-  #   lineinfile:
-  #     path: ~/.zshrc
-  #     regexp: '^export PATH='
-  #     line: export PATH=$PATH:$HOME/.local/bin
-  #   become: no
-
   - name: Create ~/.config/fish/conf.d/
     file:
       path: ~/.config/fish/conf.d/
@@ -50,10 +29,17 @@
       mode: 0755
       recurse: yes
 
-  - name: Copy fish file
+  - name: Copy my fish config file
     template:
       src: templates/my.fish.j2
       dest: ~/.config/fish/conf.d/my.fish
+      mode: 0600
+    become: no
+
+  - name: Copy my fish abbreviations file
+    template:
+      src: files/abbr.fish
+      dest: ~/.config/fish/conf.d/abbr.fish
       mode: 0600
     become: no
 
