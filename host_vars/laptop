@@ -30,6 +30,7 @@ dnf_packages:
   - jack-audio-connection-kit-dbus
   - jq
   - kernel-devel
+  - lolcat
   - make
   - moby-engine
   - openfortivpn

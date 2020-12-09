@@ -1,10 +1,11 @@
 function fish_greeting
-    set_color cyan; printf "\
+printf "\
   _____ _     _           _          _ _ 
  |  ___(_)___| |__    ___| |__   ___| | |
  | |_  | / __| '_ \  / __| '_ \ / _ \ | |
  |  _| | \__ \ | | | \__ \ | | |  __/ | |
- |_|   |_|___/_| |_| |___/_| |_|\___|_|_|\n" | cat
+ |_|   |_|___/_| |_| |___/_| |_|\___|_|_|
+ Finally, a commandline shell for the 90s\n" | lolcat -h 0.2 -v 0.2
 #    fish_logo blue cyan green
-    set_color cyan; printf "  It is "; printf (date)"\n"
+echo
 end
