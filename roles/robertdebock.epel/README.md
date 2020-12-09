@@ -2,9 +2,9 @@
 
 Install epel on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-epel.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-epel)|[![github](https://github.com/robertdebock/ansible-role-epel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-epel/actions)|[![quality](https://img.shields.io/ansible/quality/21643)](https://galaxy.ansible.com/robertdebock/epel)|[![downloads](https://img.shields.io/ansible/role/d/21643)](https://galaxy.ansible.com/robertdebock/epel)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-epel.svg)](https://github.com/robertdebock/ansible-role-epel/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-epel.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-epel)|[![github](https://github.com/robertdebock/ansible-role-epel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-epel/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-epel/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-epel)|[![quality](https://img.shields.io/ansible/quality/21643)](https://galaxy.ansible.com/robertdebock/epel)|[![downloads](https://img.shields.io/ansible/role/d/21643)](https://galaxy.ansible.com/robertdebock/epel)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-epel.svg)](https://github.com/robertdebock/ansible-role-epel/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -20,7 +20,7 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
     - role: robertdebock.epel
 ```
 
-The machine may need to be prepared using `molecule/resources/prepare.yml`:
+The machine needs to be prepared in CI this is done using `molecule/resources/prepare.yml`:
 ```yaml
 ---
 - name: Prepare
@@ -32,21 +32,6 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
     - role: robertdebock.bootstrap
 ```
 
-For verification `molecule/resources/verify.yml` runs after the role has been applied.
-```yaml
----
-- name: Verify
-  hosts: all
-  become: yes
-  gather_facts: no
-
-  tasks:
-    - name: install a package from epel
-      package:
-        name: aalib
-        state: present
-```
-
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
 
@@ -55,13 +40,11 @@ Also see a [full explanation and example](https://robertdebock.nl/how-to-use-the
 - Access to a repository containing packages, likely on the internet.
 - A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
 
-The following roles can be installed to ensure all requirements are met, using `ansible-galaxy install -r requirements.yml`:
+## [Status of requirements](#status-of-requirements)
 
-```yaml
----
-- robertdebock.bootstrap
-
-```
+| Requirement | Travis | GitHub |
+|-------------|--------|--------|
+| [robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-bootstrap.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-bootstrap) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions) |
 
 ## [Context](#context)
 
@@ -76,7 +59,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|amazon|all|
+|amazon|Candidate|
 |el|7, 8|
 
 The minimum version of Ansible required is 2.9, tests have been done to:
