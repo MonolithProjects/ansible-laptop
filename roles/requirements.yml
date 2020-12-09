@@ -12,8 +12,5 @@
 - src:     robertdebock.update
   version: master
 
-- src:     gantsign.oh-my-zsh
-  version: master
-
 - src:     monolithprojects.hashicorp_tools
   version: master
