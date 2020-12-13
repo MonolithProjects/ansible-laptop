@@ -10,4 +10,10 @@ if status --is-interactive
  abbr -a -g d docker
  abbr -a -g dc docker-compose
  abbr -a -g os openstack
+ abbr -a -g tf terraform
+ abbr -a -g tfi "terraform init"
+ abbr -a -g tfp "terraform plan"
+ abbr -a -g tfa "terraform apply"
+ abbr -a -g tfaa "terraform apply -auto-approve"
+ abbr -a -g tfd "terraform destroy"
 end
