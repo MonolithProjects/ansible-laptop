@@ -62,12 +62,6 @@
       dest: /etc/openvpn/scripts/update-systemd-resolved
       mode: 0755
 
-  # - name: Copy resolv conf pannet
-  #   template:
-  #     src: templates/resolv.conf.pannet.j2
-  #     dest: /etc/resolv.conf.pannet
-  #     mode: 0644
-
   - name: Link to /run/systemd/resolve/stub-resolv.conf
     file:
       src: /run/systemd/resolve/stub-resolv.conf

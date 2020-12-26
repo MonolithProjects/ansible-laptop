@@ -48,5 +48,5 @@
   - name: Copy Welcome screen
     copy:
       src: files/fish_greeting.fish
-      dest: "/home/{{ ansible_user }}/.config/fish/functions/fish_greeting.fish"
+      dest: "/home/{{ ansible_user_id }}/.config/fish/functions/fish_greeting.fish"
       mode: 0600
