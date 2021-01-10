@@ -54,6 +54,7 @@ pip_packages:
   - flake8
   - molecule
   - molecule-docker
+  - openshift
   - openstack-heat
   - python-cinderclient
   - python-keystoneclient 
