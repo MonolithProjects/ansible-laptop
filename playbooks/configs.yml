@@ -102,3 +102,9 @@
         - "9000:9000"
       env:
         TZ: "CET"
+
+  - name: Use Xorg instead of Wayland
+    lineinfile:
+      path: /etc/gdm/custom.conf
+      regexp: 'WaylandEnable='
+      line: 'WaylandEnable=false'
