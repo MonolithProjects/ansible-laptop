@@ -90,8 +90,6 @@
       baseurl: https://www.salstar.sk/pub/fedora/{{ ansible_distribution_major_version }}/x86_64/
       gpgkey: http://www.salstar.sk/pub/sagator/SAGATOR-GPG-KEY
 
-      
-
 ######### Snap ########################
 
   - name: Install snapd
