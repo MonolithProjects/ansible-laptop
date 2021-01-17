@@ -82,6 +82,16 @@
       name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
       state: present
 
+  - name: Set eID Repo
+    yum_repository:
+      name: eid
+      description: Slovensko.sk eID repo
+      file: eid
+      baseurl: https://www.salstar.sk/pub/fedora/{{ ansible_distribution_major_version }}/x86_64/
+      gpgkey: http://www.salstar.sk/pub/sagator/SAGATOR-GPG-KEY
+
+      
+
 ######### Snap ########################
 
   - name: Install snapd

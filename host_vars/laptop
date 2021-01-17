@@ -4,6 +4,7 @@ dnf_packages:
   - brave-browser
   - code
   - dnf-plugin-system-upgrade
+  - eidklient
   - fish
   - chromium
   - git
