@@ -14,3 +14,6 @@
 
 - src:     monolithprojects.hashicorp_tools
   version: master
+
+- src:     andrewrothstein.kubeseal
+  version: master

@@ -52,3 +52,7 @@
   - name: Install HashiCorp tools
     import_role:
       name: monolithprojects.hashicorp_tools
+
+  - name: Install Kubeseal client
+    import_role:
+      name: andrewrothstein.kubeseal
