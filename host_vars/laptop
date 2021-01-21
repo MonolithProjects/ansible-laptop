@@ -8,7 +8,6 @@ dnf_packages:
   - fish
   - chromium
   - git
-  - gitflow
   - gcc
   - gnome-tweak-tool
   - h264enc
