@@ -17,3 +17,6 @@
 
 - src:     andrewrothstein.kubeseal
   version: master
+
+- src:     andrewrothstein.k9s
+  version: master

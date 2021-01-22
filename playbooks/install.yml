@@ -56,3 +56,7 @@
   - name: Install Kubeseal client
     import_role:
       name: andrewrothstein.kubeseal
+
+  - name: Install k9s
+    import_role:
+      name: andrewrothstein.k9s
