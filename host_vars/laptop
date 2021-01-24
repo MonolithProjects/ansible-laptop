@@ -31,6 +31,7 @@ dnf_packages:
   - steam
   - system-config-printer
   - telegram-desktop
+  - tilix
   - virt-manager
   - virt-install
   - yarn
@@ -76,20 +77,20 @@ hashicorp_tools:
   # - name: nomad
   #   version: 0.10.3
   #   state: present
-  - name: packer
-    version: 1.6.4
-    state: absent
+  #- name: packer
+  #  version: 1.6.4
+  #  state: absent
   - name: terraform
-    version: 0.14.2
+    version: 0.14.5
     state: present
   # - name: vagrant
   #   version: 2.2.7
   #   state: present
   - name: vault
-    version: 1.5.4
+    version: 1.6.1
     state: present
   - name: waypoint
-    version: 0.1.1
+    version: 0.2.0
     state: present
 
 fisher_addons:
