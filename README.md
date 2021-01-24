@@ -10,7 +10,7 @@ Guess where... (host vars).
 
 ## How to
 
-Simply just run `ansible-playbook site.yml --ask-vault-pass`
+Simply just run `ansible-playbook site.yml`
 
 ## Available tags
 
