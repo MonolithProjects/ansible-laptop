@@ -25,6 +25,7 @@ dnf_packages:
   - python3-devel
   - python3-smbc
   - qemu-kvm
+  - screenfetch
   - sshuttle
   - solaar
   - slack
