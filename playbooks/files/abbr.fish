@@ -1,7 +1,9 @@
 if status --is-interactive
  abbr -a -g a argocd
  abbr -a -g ap ansible-playbook
- abbr -a -g btop bashtop
+ abbr -a -g btop bpytop
+ abbr -a -g cdhm "cd ~/Documents/HOME_PROJECTS"
+ abbr -a -g cdls "cd ~/Documents/LABLABS"
  abbr -a -g gc "git commit"
  abbr -a -g gph "git push"
  abbr -a -g gpl "git pull"
