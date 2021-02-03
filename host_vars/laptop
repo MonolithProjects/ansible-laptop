@@ -11,6 +11,8 @@ dnf_packages:
   - gcc
   - gnome-tweak-tool
   - h264enc
+  - icedtea-web 
+  - java-1.8.0-openjdk.x86_64
   - jack-audio-connection-kit-dbus
   - jq
   - kernel-devel
