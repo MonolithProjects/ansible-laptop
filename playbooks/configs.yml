@@ -4,6 +4,12 @@
   become: yes
   gather_facts: yes
   tasks:
+  - name: Max User watches - sysctl
+    lineinfile:
+      path: /etc/sysctl.d/99-sysctl.conf
+      regexp: 'fs.inotify.max_user_watches'
+      line: 'fs.inotify.max_user_watches = 524288'
+
   - name: CLI history backward
     lineinfile:
       path: /etc/inputrc
