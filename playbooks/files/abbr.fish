@@ -7,6 +7,7 @@ if status --is-interactive
  abbr -a -g gc "git commit"
  abbr -a -g gph "git push"
  abbr -a -g gpl "git pull"
+ abbr -a -g gup 'git commit -a -m "Update"; git push'
  abbr -a -g hg "history |grep"
  abbr -a -g k kubectl
  abbr -a -g d docker

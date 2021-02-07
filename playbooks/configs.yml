@@ -113,4 +113,4 @@
     lineinfile:
       path: /etc/gdm/custom.conf
       regexp: 'WaylandEnable='
-      line: 'WaylandEnable=false'
+      line: 'WaylandEnable=true'
