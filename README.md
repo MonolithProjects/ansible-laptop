@@ -6,7 +6,7 @@ Ansible playbook to configure my laptop.
 
 ## Where are the software packages
 
-Guess where... (host vars).
+host vars
 
 ## How to
 
