@@ -7,8 +7,9 @@ dnf_packages:
   - eidklient
   - fish
   - chromium
-  - git
   - gcc
+  - git
+  - google-cloud-sdk
   - gnome-tweak-tool
   - h264enc
   - icedtea-web 

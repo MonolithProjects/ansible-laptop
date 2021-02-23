@@ -33,7 +33,7 @@
     args:
       executable: /usr/bin/fish
     changed_when: false
-    when: 
+    when:
       - '"fish" in dnf_packages'
       - '"kubectl" in snap_packages_classic'
 
