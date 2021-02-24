@@ -71,6 +71,9 @@ pip_packages:
 global_pip_packages:
   - docker
 
+fisher_packages:
+
+
 hashicorp_tools:
   # - name: boundary
   #   version: 0.1.0
@@ -99,7 +102,7 @@ hashicorp_tools:
 
 fisher_addons:
   - barnybug/docker-fish-completion
-  - evanlucas/fish-kubectl-completions
   - jorgebucaran/bax.fish
   - jorgebucaran/fisher
   - joseluisq/gitnow
+  - evanlucas/fish-kubectl-completions

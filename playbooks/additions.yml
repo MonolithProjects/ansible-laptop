@@ -37,12 +37,19 @@
       - '"fish" in dnf_packages'
       - '"kubectl" in snap_packages_classic'
 
-  - name: Install/update addons
+  - name: Install addons
     shell: fisher install "{{ item }}"
     args:
       executable: /usr/bin/fish
     changed_when: false
     with_items: "{{ fisher_addons }}"
+    when: '"fish" in dnf_packages'
+
+  - name: Update addons
+    shell: fisher update
+    args:
+      executable: /usr/bin/fish
+    changed_when: false
     when: '"fish" in dnf_packages'
 
   - name: Copy Welcome screen
