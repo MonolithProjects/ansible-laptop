@@ -109,8 +109,8 @@
       env:
         TZ: "CET"
 
-  - name: Use Xorg instead of Wayland
+  - name: Xorg vs. Wayland
     lineinfile:
       path: /etc/gdm/custom.conf
       regexp: 'WaylandEnable='
-      line: 'WaylandEnable=true'
+      line: 'WaylandEnable={{ wayland }}'

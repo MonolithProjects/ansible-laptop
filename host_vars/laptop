@@ -1,3 +1,5 @@
+wayland: "false" #string
+
 dnf_packages:
   - bpytop
   - brave-keyring
@@ -6,6 +8,7 @@ dnf_packages:
   - dnf-plugin-system-upgrade
   - eidklient
   - fish
+  - fzf
   - chromium
   - gcc
   - git
@@ -88,7 +91,7 @@ hashicorp_tools:
   #  version: 1.6.4
   #  state: absent
   - name: terraform
-    version: 0.14.5
+    version: 0.14.7
     state: present
   # - name: vagrant
   #   version: 2.2.7
@@ -104,5 +107,4 @@ fisher_addons:
   - barnybug/docker-fish-completion
   - jorgebucaran/bax.fish
   - jorgebucaran/fisher
-  - joseluisq/gitnow
   - evanlucas/fish-kubectl-completions
