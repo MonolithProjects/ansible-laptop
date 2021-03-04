@@ -11,6 +11,7 @@ dnf_packages:
   - fzf
   - chromium
   - gcc
+  - gimp
   - git
   - google-cloud-sdk
   - gnome-tweak-tool
@@ -27,7 +28,6 @@ dnf_packages:
   - moby-engine
   - openfortivpn
   - openvpn
-  - pinta
   - python3-devel
   - python3-smbc
   - qemu-kvm
@@ -43,6 +43,7 @@ dnf_packages:
   - virt-install
   - yarn
   - youtube-dl
+  - yubikey-personalization-gui
   - ShellCheck
 
 dnf_packages_absent:
