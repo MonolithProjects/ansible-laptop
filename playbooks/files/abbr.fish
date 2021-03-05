@@ -19,4 +19,5 @@ if status --is-interactive
  abbr -a -g tfa "terraform apply"
  abbr -a -g tfaa "terraform apply -auto-approve"
  abbr -a -g tfd "terraform destroy"
+ abbr -a -g update "ansible-playbook ~/Documents/HOME_PROJECTS/ansible-laptop/site.yml"
 end
