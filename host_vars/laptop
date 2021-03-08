@@ -1,4 +1,6 @@
 wayland: "false" #string
+second_display: "DisplayPort-1"
+second_display_scale: "0.75"
 
 dnf_packages:
   - bpytop
