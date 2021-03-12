@@ -44,7 +44,7 @@
 
   - name: Copy my fish abbreviations file
     template:
-      src: files/abbr.fish
+      src: templates/abbr.fish.j2
       dest: ~/.config/fish/conf.d/abbr.fish
       mode: 0600
     become: no
