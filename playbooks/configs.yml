@@ -3,6 +3,8 @@
   hosts: laptop
   become: yes
   gather_facts: yes
+  handlers:
+  - import_tasks: ../handlers/main.yml
   tasks:
   - name: Max User watches - sysctl
     lineinfile:
@@ -80,6 +82,13 @@
       name: systemd-resolved
       enabled: yes
       state: started
+      
+  - name: Docker custom config
+    template:
+      src: templates/docker_daemon.json.j2
+      dest: /etc/docker/daemon.json
+      mode: 0644
+    notify: restart docker
 
   - name: Eanble and start docker
     systemd:
@@ -99,7 +108,7 @@
       command: -H unix:///var/run/docker.sock
       container_default_behavior: compatibility
       pull: yes
-      state: started
+      state: present
       privileged: yes
       volumes:
         - /var/run/docker.sock:/var/run/docker.sock

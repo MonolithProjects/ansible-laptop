@@ -4,3 +4,9 @@
   systemd:
     name: snapd
     state: started
+  
+- name: restart docker
+  become: yes
+  systemd:
+    name: docker
+    state: restarted
