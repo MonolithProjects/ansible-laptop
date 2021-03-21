@@ -18,6 +18,7 @@ dnf_packages:
   - git
   - google-cloud-sdk
   - gnome-tweak-tool
+  - guvcview
   - h264enc
   - icedtea-web 
   - java-1.8.0-openjdk.x86_64
@@ -29,8 +30,8 @@ dnf_packages:
   - lolcat
   - make
   - moby-engine
-  - openfortivpn
-  - openvpn
+  - obs-studio
+  - openconnect
   - python3-devel
   - python3-smbc
   - qemu-kvm
@@ -42,8 +43,10 @@ dnf_packages:
   - system-config-printer
   - telegram-desktop
   - tilix
+  - v4l-utils
   - virt-manager
   - virt-install
+  - wireguard-tools
   - yarn
   - youtube-dl
   - yubikey-personalization-gui
@@ -51,6 +54,8 @@ dnf_packages:
 
 dnf_packages_absent:
   - docker
+  - openfortivpn
+  - openvpn
 
 snap_packages:
   - spotify
