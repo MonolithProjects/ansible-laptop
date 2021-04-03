@@ -44,6 +44,7 @@ dnf_packages:
   - telegram-desktop
   - tilix
   - v4l-utils
+  - vim-enhanced
   - virt-manager
   - virt-install
   - wireguard-tools
