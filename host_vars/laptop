@@ -67,8 +67,6 @@ snap_packages_classic:
   - kubectl
   - shotcut
 
-k9s_ver: v0.24.7
-
 pip_packages:
   - ansible-lint
   - flake8
