@@ -1,5 +1,4 @@
 ---
-roles:
-  - name: robertdebock.bootstrap
 collections:
+  - name: community.docker
   - name: community.general
