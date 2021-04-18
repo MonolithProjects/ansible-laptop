@@ -32,9 +32,11 @@ dnf_packages:
   - moby-engine
   - obs-studio
   - openconnect
+  - openldap-clients
   - python3-devel
   - python3-smbc
   - qemu-kvm
+  - seahorse
   - screenfetch
   - sshuttle
   - solaar
