@@ -110,7 +110,6 @@
       file: gh
       baseurl:  https://cli.github.com/packages/rpm/gh-cli.repo
 
-
 ######### Snap ########################
 
   - name: Install snapd
