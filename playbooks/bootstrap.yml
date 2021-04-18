@@ -103,6 +103,14 @@
       - https://packages.cloud.google.com/yum/doc/yum-key.gpg
       - https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 
+  - name: GitHub CLI
+    yum_repository:
+      name: gh
+      description: GitHub CLI
+      file: gh
+      baseurl:  https://cli.github.com/packages/rpm/gh-cli.repo
+
+
 ######### Snap ########################
 
   - name: Install snapd
