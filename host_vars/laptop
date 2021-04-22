@@ -14,6 +14,7 @@ dnf_packages:
   - fzf
   - chromium
   - gcc
+  - gh
   - gimp
   - git
   - google-cloud-sdk

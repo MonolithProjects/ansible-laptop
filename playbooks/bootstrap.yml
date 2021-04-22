@@ -105,10 +105,12 @@
 
   - name: GitHub CLI
     yum_repository:
-      name: gh
+      name: gh-cli
       description: GitHub CLI
-      file: gh
-      baseurl:  https://cli.github.com/packages/rpm/gh-cli.repo
+      file: gh-cli
+      baseurl:  https://cli.github.com/packages/rpm/
+      gpgkey:
+      - http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xc99b11deb97541f0
 
 ######### Snap ########################
 
