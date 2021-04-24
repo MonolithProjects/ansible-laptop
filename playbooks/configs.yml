@@ -82,7 +82,7 @@
       name: systemd-resolved
       enabled: yes
       state: started
-      
+
   - name: Docker custom config
     template:
       src: templates/docker_daemon.json.j2
