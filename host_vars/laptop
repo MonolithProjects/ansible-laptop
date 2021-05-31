@@ -1,4 +1,4 @@
-wayland: "false" #string
+wayland: "true" #string
 second_display: "DisplayPort-1"
 second_display_scale: "0.9"
 docker_bip: "172.26.0.1/16"
