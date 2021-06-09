@@ -1,7 +1,7 @@
 wayland: "true" #string
 second_display: "DisplayPort-1"
 second_display_scale: "0.9"
-docker_bip: "172.26.0.1/16"
+docker_bip: "172.99.0.1/16"
 
 dnf_packages:
   - bpytop
@@ -66,8 +66,8 @@ snap_packages:
   - yq
 
 snap_packages_classic:
-  - helm
-  - kubectl
+#  - helm
+#  - kubectl
   - shotcut
 
 pip_packages:
@@ -89,7 +89,6 @@ global_pip_packages:
   - docker
 
 fisher_packages:
-
 
 hashicorp_tools:
   # - name: boundary

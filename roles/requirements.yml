@@ -1,9 +1,15 @@
 ---
 #  ansible-galaxy install -f -r ./roles/requirements.yml --roles-path=./roles
+- src:     dzangolab.awscli2
+  version: master
+
 - src:     geerlingguy.docker
   version: master
 
 - src:     geerlingguy.pip
+  version: master
+
+- src:     cimon-io.asdf
   version: master
 
 - src:     robertdebock.epel
@@ -16,7 +22,4 @@
   version: master
 
 - src:     andrewrothstein.kubeseal
-  version: master
-
-- src:     andrewrothstein.k9s
   version: master
