@@ -4,11 +4,11 @@
   become: yes
   gather_facts: yes
   tasks:
-  - name: Update system
-    import_role:
-      name: robertdebock.update
-    vars:
-      update_reboot: no
+  # - name: Update system
+  #   import_role:
+  #     name: robertdebock.update
+  #   vars:
+  #     update_reboot: no
 
   - name: Install pip
     import_role:
@@ -49,6 +49,14 @@
       name: "{{ global_pip_packages }}"
       extra_args: --upgrade
 
+  - name: Install and upgrade brew formulaes
+    community.general.homebrew:
+      name: "{{ brew_formulaes }}"
+      state: latest
+      update_homebrew: yes
+      path: /home/linuxbrew/.linuxbrew/bin
+    become: false
+
   # - name: Install HashiCorp tools
   #   import_role:
   #     name: monolithprojects.hashicorp_tools
@@ -57,6 +65,10 @@
     import_role:
       name: andrewrothstein.kubeseal
 
+  - name: Install k3d
+    import_role:
+      name: andrewrothstein.k3d
+
   - name: Install k9s
     import_role:
       name: andrewrothstein.k9s
@@ -64,6 +76,8 @@
   # - name: Install asdf
   #   import_role:
   #     name: cimon-io.asdf
+  #   vars:
+  #     asdf_plugins: []
 
   # - name: Set up aws-cli2
   #   import_role:

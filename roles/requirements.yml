@@ -1,5 +1,17 @@
 ---
-#  ansible-galaxy install -f -r ./roles/requirements.yml --roles-path=./roles
+#  ansible-galaxy install -r ./roles/requirements.yml --roles-path=./roles
+- src:     andrewrothstein.k3d
+  version: master
+
+- src:     andrewrothstein.k9s
+  version: master
+
+- src:     andrewrothstein.kubeseal
+  version: master
+
+- src:     cimon-io.asdf
+  version: master
+
 - src:     dzangolab.awscli2
   version: master
 

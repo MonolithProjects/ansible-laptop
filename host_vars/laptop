@@ -3,6 +3,11 @@ second_display: "DisplayPort-1"
 second_display_scale: "0.9"
 docker_bip: "172.99.0.1/16"
 
+brew_formulaes:
+  - aws-vault
+  - helm
+  - helmfile
+
 dnf_packages:
   - bpytop
   - brave-keyring
