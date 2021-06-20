@@ -1,0 +1,35 @@
+---
+# file: tasks/configure.yml
+#
+# configuration tasks.
+#
+
+- name: configuration | setup .aws directories
+  file:
+    path="~{{ item.user }}/.aws"
+    state=directory
+    owner="{{ item.user }}"
+    group="{{ item.user }}"
+    mode=0700
+  with_items: "{{ awscli_users }}"
+  become: yes
+
+- name: configuration | setup credentials
+  template:
+    src=credentials.j2
+    dest="~{{ item.user }}/.aws/credentials"
+    owner="{{ item.user }}"
+    group="{{ item.user }}"
+    mode=0400
+  with_items: "{{ awscli_users }}"
+  become: yes
+
+- name: configuration | setup configuration
+  template:
+    src=config.j2
+    dest="~{{ item.user }}/.aws/config"
+    owner="{{ item.user }}"
+    group="{{ item.user }}"
+    mode=0400
+  with_items: "{{ awscli_users }}"
+  become: yes

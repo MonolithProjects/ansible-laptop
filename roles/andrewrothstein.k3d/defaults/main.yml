@@ -1,0 +1,346 @@
+---
+# defaults file for k3d
+k3d_ver: v4.4.5
+k3d_mirror: https://github.com/rancher/k3d/releases/download
+k3d_os: linux
+k3d_arch: amd64
+k3d_install_dir: /usr/local/bin
+k3d_checksums:
+  v1.5.1:
+    # https://github.com/rancher/k3d/releases/download/v1.5.1/k3d-darwin-amd64
+    darwin-amd64: sha256:b84817b6a0f294a6e2ec892fe4119cf47f3f093d0c44f904cbdf90d27b15206a
+    # https://github.com/rancher/k3d/releases/download/v1.5.1/k3d-linux-amd64
+    linux-amd64: sha256:4bceda601726c65d5641afd4f2f1430300be9636592102a4f0a88ff58b590b82
+    # https://github.com/rancher/k3d/releases/download/v1.5.1/k3d-linux-386
+    linux-386: sha256:8713655181a810e7294cfc30fe55e5cad6ede8c5523267e7a3f585cd27952d4b
+    # https://github.com/rancher/k3d/releases/download/v1.5.1/k3d-linux-arm
+    linux-arm: sha256:38b9a71b0d623c70ee01d63e313d320cf2ee7ac40e910b8bbd391b7ed257c057
+    # https://github.com/rancher/k3d/releases/download/v1.5.1/k3d-linux-arm64
+    linux-arm64: sha256:1cdec2341ca38d156c7c7c1f34426b6fa1feed4aa937c0db10e3d9714add0e94
+    # https://github.com/rancher/k3d/releases/download/v1.5.1/k3d-windows-amd64.exe
+    windows-amd64: sha256:a8cad7cea2c8d16ba3e89c4bbc893085dccbbe7f2564d49739b9bc28dd078d7f
+  v1.6.0:
+    # https://github.com/rancher/k3d/releases/download/v1.6.0/k3d-darwin-amd64
+    darwin-amd64: sha256:7d74c89eb8e27378d392eca3fbbbc41cfc80aa94539f5310cf3f2b34fe349845
+    # https://github.com/rancher/k3d/releases/download/v1.6.0/k3d-linux-amd64
+    linux-amd64: sha256:c76f53762ef2c6aa1c9275156068e51a919523a0432353287b8a9099b06320b6
+    # https://github.com/rancher/k3d/releases/download/v1.6.0/k3d-linux-386
+    linux-386: sha256:d5c685d28f356831759949afec43d99dae33fbb927807053b29dc13b6b758c07
+    # https://github.com/rancher/k3d/releases/download/v1.6.0/k3d-linux-arm
+    linux-arm: sha256:49ca144339294ee0afba119dcd97464d7037531b419ac5ecc4f3282cc86f03f2
+    # https://github.com/rancher/k3d/releases/download/v1.6.0/k3d-linux-arm64
+    linux-arm64: sha256:40f1b1c46c57f2942a875c2b648318a673b666ac57791f8dca1d6b860b35b4a8
+    # https://github.com/rancher/k3d/releases/download/v1.6.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:ad5b0342ba359060cea02b24275102242589613760bdb435c7385a2ee9022b92
+  v1.7.0:
+    # https://github.com/rancher/k3d/releases/download/v1.7.0/k3d-darwin-amd64
+    darwin-amd64: sha256:c24add17c29c95c239efba277977cb1ecdfb77255d57ade004059cb04bf28250
+    # https://github.com/rancher/k3d/releases/download/v1.7.0/k3d-linux-amd64
+    linux-amd64: sha256:da9ff31bcf4377fadfb065f4998d347f19de1168a5a553ce2c23b763ee1f6098
+    # https://github.com/rancher/k3d/releases/download/v1.7.0/k3d-linux-386
+    linux-386: sha256:d42d3128ab9f0586187b4fe977b1560b86b7fe787f0d0de40e70c971b90e17b4
+    # https://github.com/rancher/k3d/releases/download/v1.7.0/k3d-linux-arm
+    linux-arm: sha256:d922dc3c6df0cb9c7a92a3d1f1a96efd4126208596b06f522d6270289dcfadd5
+    # https://github.com/rancher/k3d/releases/download/v1.7.0/k3d-linux-arm64
+    linux-arm64: sha256:2d08ee5434fa6a9f6d8abf420cb3ebb075af320262ecbac82175e33442163587
+    # https://github.com/rancher/k3d/releases/download/v1.7.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:1f8e8515f281a8439bea5605c122ac4f45192c3f043f315f22250bd23f36e661
+  v3.0.0:
+    # https://github.com/rancher/k3d/releases/download/v3.0.0/k3d-darwin-amd64
+    darwin-amd64: sha256:83401abd32c562905aca9edf060201db0c8be80dba1a58db142d8bf19e877d63
+    # https://github.com/rancher/k3d/releases/download/v3.0.0/k3d-linux-amd64
+    linux-amd64: sha256:934ad7e08478fa6531b5e66e2153d2922b7db0224a8dc561146f474e7c3dcae8
+    # https://github.com/rancher/k3d/releases/download/v3.0.0/k3d-linux-386
+    linux-386: sha256:698ff370de1c07e48bc50dc87471d53677396a97c08bc4fcc7b09d3b38fc2951
+    # https://github.com/rancher/k3d/releases/download/v3.0.0/k3d-linux-arm
+    linux-arm: sha256:b93de0bb52c3779c1aadd5a090d343ca39521b82a5137e5d2bd0c003293356b6
+    # https://github.com/rancher/k3d/releases/download/v3.0.0/k3d-linux-arm64
+    linux-arm64: sha256:291794bef1af6bea8be2347d34f98ba95846f8c9ed3e63eab5af5b50e3e21b05
+    # https://github.com/rancher/k3d/releases/download/v3.0.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:eddfd61bce6dea7bb638f45459fd4d0dfe0dbaefe519be4d9f397190526f8353
+  v3.0.1:
+    # https://github.com/rancher/k3d/releases/download/v3.0.1/k3d-darwin-amd64
+    darwin-amd64: sha256:f9596fe616fa4551602256c0bc6ccc8e147daaf0fdd94c72ffd6af515e9e7867
+    # https://github.com/rancher/k3d/releases/download/v3.0.1/k3d-linux-amd64
+    linux-amd64: sha256:e773d3a8377b6562d2cf29e7683c89ecc03f5843990c1853b810ca1c656aeb2e
+    # https://github.com/rancher/k3d/releases/download/v3.0.1/k3d-linux-386
+    linux-386: sha256:6f5b6c9384ab17ebaf131b86a4410cde6b12b12e926097bd1bb71b953bed2765
+    # https://github.com/rancher/k3d/releases/download/v3.0.1/k3d-linux-arm
+    linux-arm: sha256:75a9ef3e0c67f9d5f950277932f68432424b3d44da1e3939270fdeda34b0ab7d
+    # https://github.com/rancher/k3d/releases/download/v3.0.1/k3d-linux-arm64
+    linux-arm64: sha256:a861bf5cab4376706c69836f81688eb24c2d7775a45de40cbb0612e7631e2037
+    # https://github.com/rancher/k3d/releases/download/v3.0.1/k3d-windows-amd64.exe
+    windows-amd64: sha256:aaa50b8cdfb97514eb8f1588e20f609534fc5d065fa0df59019b87f2f22fe75a
+  v3.0.2:
+    # https://github.com/rancher/k3d/releases/download/v3.0.2/k3d-darwin-amd64
+    darwin-amd64: sha256:fb95b1feef4ac3ae8dd8469dff65aa688a687c73d7b05c1deb822a300ac70101
+    # https://github.com/rancher/k3d/releases/download/v3.0.2/k3d-linux-amd64
+    linux-amd64: sha256:4751acfdb6a90a2f39f97293c862835aa863744f4c8ac4654168527e0365f109
+    # https://github.com/rancher/k3d/releases/download/v3.0.2/k3d-linux-386
+    linux-386: sha256:0be5374982991889d370e68eba74e271b3c7a5768996babf2f51e835f0ca4eaf
+    # https://github.com/rancher/k3d/releases/download/v3.0.2/k3d-linux-arm
+    linux-arm: sha256:6466cdbe74603a3d44056ba84c944175a16f0e1048d816f7272c1ad6028b6bda
+    # https://github.com/rancher/k3d/releases/download/v3.0.2/k3d-linux-arm64
+    linux-arm64: sha256:714469cc62d4121015d4510677fe9b6b6208fa11f3f90ac07efc8da3d9db22fd
+    # https://github.com/rancher/k3d/releases/download/v3.0.2/k3d-windows-amd64.exe
+    windows-amd64: sha256:1edf0eb210462447ecc8f94f47f8d699b711c80b1c933f8146973ac583f7c7fe
+  v3.1.0:
+    # https://github.com/rancher/k3d/releases/download/v3.1.0/k3d-darwin-amd64
+    darwin-amd64: sha256:699d306c176090c6978d09b1e641d9ed3c150da88fe747435af252204a9f9c9a
+    # https://github.com/rancher/k3d/releases/download/v3.1.0/k3d-linux-amd64
+    linux-amd64: sha256:afeb99002f664279b8bc53f40f706325c9f5ef3eb5815c5062ec1176e7f3805f
+    # https://github.com/rancher/k3d/releases/download/v3.1.0/k3d-linux-386
+    linux-386: sha256:10f21d01e8954043630903d88b73a44f488b758050082e3340e17ee1b74a8c93
+    # https://github.com/rancher/k3d/releases/download/v3.1.0/k3d-linux-arm
+    linux-arm: sha256:4649c4bf628ff5bb8976bcefec12fd5ae0178e26bcc88ac90167c70df7356034
+    # https://github.com/rancher/k3d/releases/download/v3.1.0/k3d-linux-arm64
+    linux-arm64: sha256:8739918ae75b84419c7646fe6470134a3b37fec78f9ee9afc48457979ea07cbd
+    # https://github.com/rancher/k3d/releases/download/v3.1.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:db338da0457a1441c556f1a59af3a2974ddf0a51a7da1bbb1e4dbd3b2be8dc72
+  v3.1.1:
+    # https://github.com/rancher/k3d/releases/download/v3.1.1/k3d-darwin-amd64
+    darwin-amd64: sha256:32f72427c7d258d04ac02494864e64d2158a8602b5fac97cce49819c05ad8b8b
+    # https://github.com/rancher/k3d/releases/download/v3.1.1/k3d-linux-amd64
+    linux-amd64: sha256:7c431828499c6ddc0ec709ff88f7606d6afe2509d135826b57fa24a4a9210e94
+    # https://github.com/rancher/k3d/releases/download/v3.1.1/k3d-linux-386
+    linux-386: sha256:6add9c60d3104b81a8626463ab8356390747bc5c67ebd76d81ec6301ac00083e
+    # https://github.com/rancher/k3d/releases/download/v3.1.1/k3d-linux-arm
+    linux-arm: sha256:f4fa61c27d95a4d3c6aa94daf8e5fff5ce5e551dddd19728e127d08a59e73858
+    # https://github.com/rancher/k3d/releases/download/v3.1.1/k3d-linux-arm64
+    linux-arm64: sha256:815d69ee63e73b74b5b93444c7c8b88135f5c6446639e9de1b10317c7421bab7
+    # https://github.com/rancher/k3d/releases/download/v3.1.1/k3d-windows-amd64.exe
+    windows-amd64: sha256:a9ace01ef32f9227698b841552b105a030d2d42ce98dfdb22a76e2c87854dec9
+  v3.1.2:
+    # https://github.com/rancher/k3d/releases/download/v3.1.2/k3d-darwin-amd64
+    darwin-amd64: sha256:31bb07e206b9012e3fe4aa2965d8d8ea70e3489a3b3dd016c8f8d4400e24c39f
+    # https://github.com/rancher/k3d/releases/download/v3.1.2/k3d-linux-amd64
+    linux-amd64: sha256:eceea45052519a5eb057a1bf2cea53a2eea5c5e51160ccb10194cd495de313c5
+    # https://github.com/rancher/k3d/releases/download/v3.1.2/k3d-linux-386
+    linux-386: sha256:ec1ab0a3cf6b5de4e41000ad3bde40c986e8d1ca336a074db2d3204dc23e4e48
+    # https://github.com/rancher/k3d/releases/download/v3.1.2/k3d-linux-arm
+    linux-arm: sha256:c9efbda448c3afdf087d3d94a0d41d334b123f4e8488b179c6d3bbbb257f7296
+    # https://github.com/rancher/k3d/releases/download/v3.1.2/k3d-linux-arm64
+    linux-arm64: sha256:65e09b96d5cc5a85d99e59947856b5e5fbe4c871e761c057f944f213d7c3edcf
+    # https://github.com/rancher/k3d/releases/download/v3.1.2/k3d-windows-amd64.exe
+    windows-amd64: sha256:4ae28c5ed8225669a8df5660bf060a2ae109ca13174e0db6d12b873549c0898f
+  v3.1.3:
+    # https://github.com/rancher/k3d/releases/download/v3.1.3/k3d-darwin-amd64
+    darwin-amd64: sha256:c54aced7b8065e93d92438affada0bc1c4426f8b4cb6f2c4733be961b8af18e2
+    # https://github.com/rancher/k3d/releases/download/v3.1.3/k3d-linux-amd64
+    linux-amd64: sha256:bd4a79d646ab81c2fbc484a26addd6620da9c43d47f935606f95c7e288151e72
+    # https://github.com/rancher/k3d/releases/download/v3.1.3/k3d-linux-386
+    linux-386: sha256:82dd382bbad27e14918645006a1f18722903a8ad3fe724f8fb83e2e13777f03c
+    # https://github.com/rancher/k3d/releases/download/v3.1.3/k3d-linux-arm
+    linux-arm: sha256:f2d14d06b2fe9eae4e18da2c28675330ab0d9c2689930f5ddc87c496b5837c6e
+    # https://github.com/rancher/k3d/releases/download/v3.1.3/k3d-linux-arm64
+    linux-arm64: sha256:e779b6fdacd5b8093c71a07cc189b9787db2ac79a8774d97088211ab3c6eae6b
+    # https://github.com/rancher/k3d/releases/download/v3.1.3/k3d-windows-amd64.exe
+    windows-amd64: sha256:aca25c60be732356d290d57a216d6f8dc0cc22c893d12b653cc64bd630f450ae
+  v3.1.4:
+    # https://github.com/rancher/k3d/releases/download/v3.1.4/k3d-darwin-amd64
+    darwin-amd64: sha256:9e8345ed2261f2449fc8d3e96c0650d5e5dc0a1ab820842ad4851093e1379b47
+    # https://github.com/rancher/k3d/releases/download/v3.1.4/k3d-linux-amd64
+    linux-amd64: sha256:bd984a8f416aa2f5ca2cb117cb637e706bc0e03f02644b9dc4411f310fe28de1
+    # https://github.com/rancher/k3d/releases/download/v3.1.4/k3d-linux-386
+    linux-386: sha256:f4203c2b3cca9d37ffdcb10ab30ec45d86624e763ef5cedc0942aa1cbf9e84ee
+    # https://github.com/rancher/k3d/releases/download/v3.1.4/k3d-linux-arm
+    linux-arm: sha256:d0a53c9e4835fd24ab6fbd146094172415e51937d2d877ed11972436993d455b
+    # https://github.com/rancher/k3d/releases/download/v3.1.4/k3d-linux-arm64
+    linux-arm64: sha256:31d0ab095301514611474b515712ca84838cd68353348012e733c6e9808ea8a5
+    # https://github.com/rancher/k3d/releases/download/v3.1.4/k3d-windows-amd64.exe
+    windows-amd64: sha256:196c571eb5ae257eb4d832bd9723c4d124a8c7ec1d515e35b9062d85063631a3
+  v3.1.5:
+    # https://github.com/rancher/k3d/releases/download/v3.1.5/k3d-darwin-amd64
+    darwin-amd64: sha256:8d4a1fc30cb9638fa9e449b658f3d4e2d8e772bb0c0e0f9a32826244c0ea36b8
+    # https://github.com/rancher/k3d/releases/download/v3.1.5/k3d-linux-amd64
+    linux-amd64: sha256:95c2014561599f3a94f44d05de1c25cf9e5ba6bb892faf43a02422e50e8e7e94
+    # https://github.com/rancher/k3d/releases/download/v3.1.5/k3d-linux-386
+    linux-386: sha256:cd2948c8858448d1a87d2a558bf96490535e090c7a4b301ae733855a3f0e13ee
+    # https://github.com/rancher/k3d/releases/download/v3.1.5/k3d-linux-arm
+    linux-arm: sha256:2e10fa254bb9a369e6caa3cad1c127a4f36463f5b41f5be756c811afcc624b08
+    # https://github.com/rancher/k3d/releases/download/v3.1.5/k3d-linux-arm64
+    linux-arm64: sha256:bd7016183970c3fd257068b6f028a2ed9b3b8e89ef78bb870434de30ecbdfa2d
+    # https://github.com/rancher/k3d/releases/download/v3.1.5/k3d-windows-amd64.exe
+    windows-amd64: sha256:054e9dbb5b931598525c21e2b6cb2cd89a9c8874814791a35ec0780b7ec06ce9
+  v3.2.0:
+    # https://github.com/rancher/k3d/releases/download/v3.2.0/k3d-darwin-amd64
+    darwin-amd64: sha256:7ed5850c6a1e609f0976c254263c0ea704a0adfccb760a7cf0322a386cf3cb9a
+    # https://github.com/rancher/k3d/releases/download/v3.2.0/k3d-linux-amd64
+    linux-amd64: sha256:d4d2c3285b0b87175216bc6b2b5edbba5b2acbc8fca4277604d538ec9f38fb70
+    # https://github.com/rancher/k3d/releases/download/v3.2.0/k3d-linux-386
+    linux-386: sha256:8fc122ca062a9adb2f1920a58dd57cf5969c3cfbe1985514cfd7d7bf4e12ea87
+    # https://github.com/rancher/k3d/releases/download/v3.2.0/k3d-linux-arm
+    linux-arm: sha256:8e740b361767f543548989a394904222ba363d87ea431ebb34c176ed07e2cdb3
+    # https://github.com/rancher/k3d/releases/download/v3.2.0/k3d-linux-arm64
+    linux-arm64: sha256:08a92596a08fc21ff9dce19eb189f3dbb3d17c871ad9e0c61d69ca79b41cc110
+    # https://github.com/rancher/k3d/releases/download/v3.2.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:f0a0c4f57d5f056f4a4c134207fd0961a8a6bfaad8409b9dc080bc0f378cc359
+  v3.2.1:
+    # https://github.com/rancher/k3d/releases/download/v3.2.1/k3d-darwin-amd64
+    darwin-amd64: sha256:74a68bad47878641a24dcf0ea8a3e9e486c4211902ef8bc12ed9a687ddb9a12c
+    # https://github.com/rancher/k3d/releases/download/v3.2.1/k3d-linux-amd64
+    linux-amd64: sha256:cbc67edac74a645fdf803195277c5ac27a91036d089f67a2af5238a690cb7d57
+    # https://github.com/rancher/k3d/releases/download/v3.2.1/k3d-linux-386
+    linux-386: sha256:ee25e42e1e721de2b642b0aef204175ab0d85c6c943253485d6446e16db18956
+    # https://github.com/rancher/k3d/releases/download/v3.2.1/k3d-linux-arm
+    linux-arm: sha256:491b87ff42cfd33bb78cfe5f4f7728d3a91675cccf6904cffc2ec2bbe3f7069e
+    # https://github.com/rancher/k3d/releases/download/v3.2.1/k3d-linux-arm64
+    linux-arm64: sha256:3e680fead243fad5b82dac5d7154e921535c1d506101db6b2b6d237a2d4b79f1
+    # https://github.com/rancher/k3d/releases/download/v3.2.1/k3d-windows-amd64.exe
+    windows-amd64: sha256:4cc6bedc2b8c42d136815778c0ee5e77c00c78a521b7709601aac6324ac8bfba
+  v3.3.0:
+    # https://github.com/rancher/k3d/releases/download/v3.3.0/k3d-darwin-amd64
+    darwin-amd64: sha256:873991cfa5ec5639c54fcf53cc2bd46bced5db72ebbee1d83dc670248e0f37a5
+    # https://github.com/rancher/k3d/releases/download/v3.3.0/k3d-linux-amd64
+    linux-amd64: sha256:3f09facdb0511666ee379ee3beb3d92de53c379b84531c8e5e7ff1d2b9889a45
+    # https://github.com/rancher/k3d/releases/download/v3.3.0/k3d-linux-386
+    linux-386: sha256:7aa4e9c2c04b8d4ece303a3c9eabfaf3ce506deef6ac7cb7c13992107a6e0d7f
+    # https://github.com/rancher/k3d/releases/download/v3.3.0/k3d-linux-arm
+    linux-arm: sha256:72bae0b090809356a84fb4ce317dd87b85278caffdcb622d3e219ed71ba0f088
+    # https://github.com/rancher/k3d/releases/download/v3.3.0/k3d-linux-arm64
+    linux-arm64: sha256:97d4c6c5dd14b18baa5f68b5427022ce842e394df1510d0b9ed0075f42b1145f
+    # https://github.com/rancher/k3d/releases/download/v3.3.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:6f14a3b415ef38e527957f7aa0c82b3ff8b1f7b9589b9ca2615ad42bbbf51831
+  v3.4.0:
+    # https://github.com/rancher/k3d/releases/download/v3.4.0/k3d-darwin-amd64
+    darwin-amd64: sha256:54b9b855eddcc3408fbd4f16eaafa6fffd54b17b7224ebe469ce0b2afe9e674c
+    # https://github.com/rancher/k3d/releases/download/v3.4.0/k3d-linux-amd64
+    linux-amd64: sha256:1c961f1161d7b7fb55658ee32081b250a0da6d5f81e40c307a0300e3e130d19f
+    # https://github.com/rancher/k3d/releases/download/v3.4.0/k3d-linux-386
+    linux-386: sha256:9334d72185915a6ab95eb574b1ebe3053f30857bfe8fe2de2952a5c8f8f8fea0
+    # https://github.com/rancher/k3d/releases/download/v3.4.0/k3d-linux-arm
+    linux-arm: sha256:7f3a409b4408603166350d496f9e5fec5d4e3f9ef15cd2d55e3350edb1280854
+    # https://github.com/rancher/k3d/releases/download/v3.4.0/k3d-linux-arm64
+    linux-arm64: sha256:f70ad81b500d1ad5a0cd84c414db32153c40b5ede847a8a118030dd500a1f628
+    # https://github.com/rancher/k3d/releases/download/v3.4.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:4abf345922aa9b8f206813d70d5ebc6eec6190a334476471a05011f48297b475
+  v4.0.0:
+    # https://github.com/rancher/k3d/releases/download/v4.0.0/k3d-darwin-amd64
+    darwin-amd64: sha256:72ee59b08e4a734583606cc74c6d13923d43a5e2f68543ec60a7168f494d6cd6
+    # https://github.com/rancher/k3d/releases/download/v4.0.0/k3d-linux-amd64
+    linux-amd64: sha256:011e2aca2dddd9de7080d0ed58a010dad0c64cea15bf1d5f647cfedf50d2a793
+    # https://github.com/rancher/k3d/releases/download/v4.0.0/k3d-linux-386
+    linux-386: sha256:e23cc4fb1a0a70485e1a6dc4e9215d1b9a1d81d0c32872211d726d9d4d7b0ac9
+    # https://github.com/rancher/k3d/releases/download/v4.0.0/k3d-linux-arm
+    linux-arm: sha256:c33b04669f6e933602eb3a3de08ea80935a6b682237197c0c0980270f37749f7
+    # https://github.com/rancher/k3d/releases/download/v4.0.0/k3d-linux-arm64
+    linux-arm64: sha256:810572603f44a020ed4b6b910c6dea5d158120c5fb35ad07c544c8723b16322d
+    # https://github.com/rancher/k3d/releases/download/v4.0.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:02253801d8db92e51fa67d47e5c8b07cec477b2131fcb0d2490f53435142cdca
+  v4.1.1:
+    # https://github.com/rancher/k3d/releases/download/v4.1.1/k3d-darwin-amd64
+    darwin-amd64: sha256:40fe273f567bad7e031636fe896a05637f173f047ee41f9566a6ad933e7da34f
+    # https://github.com/rancher/k3d/releases/download/v4.1.1/k3d-linux-amd64
+    linux-amd64: sha256:4148b8035774a2765969898cc73066491ac718d1b2890415a4625931aaacd3ac
+    # https://github.com/rancher/k3d/releases/download/v4.1.1/k3d-linux-386
+    linux-386: sha256:b5891997b3d800fd4bb6f55aed874f3e76e60a0edf53b78150faaedc9932663d
+    # https://github.com/rancher/k3d/releases/download/v4.1.1/k3d-linux-arm
+    linux-arm: sha256:ea0f29231039682811086e86c7c5d28bc69259b4bde359a5ca2a88fc4350bf87
+    # https://github.com/rancher/k3d/releases/download/v4.1.1/k3d-linux-arm64
+    linux-arm64: sha256:9d44112543c801086ded64529e2721438bea45c1503f330043db4cf5029cfabb
+    # https://github.com/rancher/k3d/releases/download/v4.1.1/k3d-windows-amd64.exe
+    windows-amd64: sha256:dc13acba412b473ab5b602420bf61cb2149a8b99cc24a0261574e3f965f03560
+  v4.2.0:
+    # https://github.com/rancher/k3d/releases/download/v4.2.0/k3d-darwin-amd64
+    darwin-amd64: sha256:9d3ba7bde30651f5ff638d772c5d96fe7b795e0f6e9e0bf98e197183425473d2
+    # https://github.com/rancher/k3d/releases/download/v4.2.0/k3d-linux-amd64
+    linux-amd64: sha256:745396701fb0ffaa832b02c5b734fd5b6bb042ac878b3ad16bb810ebbf02df0c
+    # https://github.com/rancher/k3d/releases/download/v4.2.0/k3d-linux-386
+    linux-386: sha256:d0e29b7e64c7c88a0520b3a88c501236254827afcf96fc4469018499e50f6030
+    # https://github.com/rancher/k3d/releases/download/v4.2.0/k3d-linux-arm
+    linux-arm: sha256:21a69922a2778acb00a62868fae2dc5d3ce252fa5b576d54e811eda7d3a4a1f5
+    # https://github.com/rancher/k3d/releases/download/v4.2.0/k3d-linux-arm64
+    linux-arm64: sha256:5077b74f9d6274eb4afeb7abbd8d4ae12496b33d9faf723d50c36e0c78b993cb
+    # https://github.com/rancher/k3d/releases/download/v4.2.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:372dc3f40830b47ada445d234bf2fc1b2037f5b4f205868e41df36cc2126dab2
+  v4.3.0:
+    # https://github.com/rancher/k3d/releases/download/v4.3.0/k3d-darwin-amd64
+    darwin-amd64: sha256:17925d18fb573932d57093afad0e772dce4b1181584a7a99fca19a58d478d9c5
+    # https://github.com/rancher/k3d/releases/download/v4.3.0/k3d-linux-amd64
+    linux-amd64: sha256:afb1a4b2df657c3721cc4034a381c05c3c7cc343198103157317d1e891f2ee7f
+    # https://github.com/rancher/k3d/releases/download/v4.3.0/k3d-linux-386
+    linux-386: sha256:1dff2f544d49b8dfbaea8fc26c860f0f369fb6bd8c3f2aaf9893b61ece9e0f72
+    # https://github.com/rancher/k3d/releases/download/v4.3.0/k3d-linux-arm
+    linux-arm: sha256:23d68f3bd2b9a1305c82d064ca6656414dfe2956f77ea82e6c01578cd3d458e3
+    # https://github.com/rancher/k3d/releases/download/v4.3.0/k3d-linux-arm64
+    linux-arm64: sha256:4eb2e85411667acb6612552c6ac4115a78e588b22b48cdc02047b8398e0491e6
+    # https://github.com/rancher/k3d/releases/download/v4.3.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:a8434cb1d1314d0aaaeb62cb3c709e38ef5103f7ed790eca1ddacdb9ebf499d3
+  v4.4.0:
+    # https://github.com/rancher/k3d/releases/download/v4.4.0/k3d-darwin-amd64
+    darwin-amd64: sha256:83f2fa750cae0066cec474663fa12cb1248a4e05d7520419c7ae105797eb5237
+    # https://github.com/rancher/k3d/releases/download/v4.4.0/k3d-linux-amd64
+    linux-amd64: sha256:18b3372c491c91f7df2a0f6fa28d81de2dffdc38185a9a8388fa286bf2a231ff
+    # https://github.com/rancher/k3d/releases/download/v4.4.0/k3d-linux-386
+    linux-386: sha256:0ead425bba353ba664733a146f4654acba156009159562782a42d99b4b318dc8
+    # https://github.com/rancher/k3d/releases/download/v4.4.0/k3d-linux-arm
+    linux-arm: sha256:00c9c7396c17a72445d93400ac7aef85604aaec4df625d6809708f67cf7eb883
+    # https://github.com/rancher/k3d/releases/download/v4.4.0/k3d-linux-arm64
+    linux-arm64: sha256:b82692729c4ecb30213577954d6faf3504e54b13a22a2eec1d8413d9353a2152
+    # https://github.com/rancher/k3d/releases/download/v4.4.0/k3d-windows-amd64.exe
+    windows-amd64: sha256:d4b4ae37820e52e991ebc88f557a469b69c4ffe53ef8e7ca499ab4b4cf49a377
+  v4.4.1:
+    # https://github.com/rancher/k3d/releases/download/v4.4.1/k3d-darwin-amd64
+    darwin-amd64: sha256:3c7e16d5f90abddc37f4caf3c431f260cd5c8c8ffd81c228dedd9fd60f2b646b
+    # https://github.com/rancher/k3d/releases/download/v4.4.1/k3d-linux-amd64
+    linux-amd64: sha256:446891db12792edcc2c6bbf8c90d59e0f549eb57dbc070b0a326ae0f1cf455ae
+    # https://github.com/rancher/k3d/releases/download/v4.4.1/k3d-linux-386
+    linux-386: sha256:1fadbe7b1ac85b62725dc89f775db727fd310ca4343d815f9d8c6edf2d8ab163
+    # https://github.com/rancher/k3d/releases/download/v4.4.1/k3d-linux-arm
+    linux-arm: sha256:43fe1493d94f55a47b6a7f830fa91d1ffc0b6383199b7974135d8b735ac331e9
+    # https://github.com/rancher/k3d/releases/download/v4.4.1/k3d-linux-arm64
+    linux-arm64: sha256:b2f4cffcb2519f821126910711cf922f78bccc611f7821feb6807f891b159c58
+    # https://github.com/rancher/k3d/releases/download/v4.4.1/k3d-windows-amd64.exe
+    windows-amd64: sha256:d2a51099c3b6dc71eaaeb9f469222fec027c7f09096a191064bbdc38c457ff71
+  v4.4.2:
+    # https://github.com/rancher/k3d/releases/download/v4.4.2/k3d-darwin-amd64
+    darwin-amd64: sha256:a97b0a6de996a30a3ddc5154ba0e66bf9f3618a181251c1beb598a8d404d527e
+    # https://github.com/rancher/k3d/releases/download/v4.4.2/k3d-linux-amd64
+    linux-amd64: sha256:0c36ea50385b19a2eb22cd9032bf61aad9838ad8f59e0b6a21b4711bf46f39e4
+    # https://github.com/rancher/k3d/releases/download/v4.4.2/k3d-linux-386
+    linux-386: sha256:723487acab5c05ee9898fd68be54769c886b4bc98548f3b3440e755fe8c66869
+    # https://github.com/rancher/k3d/releases/download/v4.4.2/k3d-linux-arm
+    linux-arm: sha256:5fab5d7654ab3d23c0bbbcabdc6ccb887507cd994718c87e2aa1d869c10e8b00
+    # https://github.com/rancher/k3d/releases/download/v4.4.2/k3d-linux-arm64
+    linux-arm64: sha256:a519a825eaa4b8ac69edbe29aa82a9c0e68c1460149287b234c2deba1c9d64b7
+    # https://github.com/rancher/k3d/releases/download/v4.4.2/k3d-windows-amd64.exe
+    windows-amd64: sha256:5030a266281f72f935d6dc3eac5726a7d8ba74ae46c2a5a4ecce5a303b01c3e4
+  v4.4.3:
+    # https://github.com/rancher/k3d/releases/download/v4.4.3/k3d-darwin-amd64
+    darwin-amd64: sha256:dbde597d1363557c1aee5cb9da7efce2e29008ce4ba7993560b84c490698d09b
+    # https://github.com/rancher/k3d/releases/download/v4.4.3/k3d-linux-amd64
+    linux-amd64: sha256:34afe9baa2fd67b0287535f896f5316bf604b009534b84a793dae084c6ca805a
+    # https://github.com/rancher/k3d/releases/download/v4.4.3/k3d-linux-386
+    linux-386: sha256:d564930af5c150c0b3b174328636a5e52fabf7ce3869fb108ac74488bfe91bbe
+    # https://github.com/rancher/k3d/releases/download/v4.4.3/k3d-linux-arm
+    linux-arm: sha256:241018bfd04ae7f84db9b7ff62ebf32468c05f576c6ab1cbef9e1e808f8cbe41
+    # https://github.com/rancher/k3d/releases/download/v4.4.3/k3d-linux-arm64
+    linux-arm64: sha256:30dd629b1f25fa7b3ef1d8219135d8dbc3e75cf133e0c07573d86e82070dc255
+    # https://github.com/rancher/k3d/releases/download/v4.4.3/k3d-windows-amd64.exe
+    windows-amd64: sha256:33d90507627f181ace60048abdd8cf3a106782487c9f9bfbbbb67b2f7e1cfb6f
+  v4.4.4:
+    # https://github.com/rancher/k3d/releases/download/v4.4.4/k3d-darwin-amd64
+    darwin-amd64: sha256:5fc9b68c9cd523ea743a9ca31163330db642d50f4db421ee00f7e1f4a29da552
+    # https://github.com/rancher/k3d/releases/download/v4.4.4/k3d-linux-amd64
+    linux-amd64: sha256:6d4ac3d4c5b084f445980e427c5d3a75eefd2c39a22d028825c234c6c20d1e46
+    # https://github.com/rancher/k3d/releases/download/v4.4.4/k3d-linux-386
+    linux-386: sha256:f5422887a8f64a75da2c354682985af713b658313c7a165ebc0e28bb0d7fcb11
+    # https://github.com/rancher/k3d/releases/download/v4.4.4/k3d-linux-arm
+    linux-arm: sha256:4e8933f3529d08a60b36fe56f0d9fca1d686b02a5278d189d404a4b676697135
+    # https://github.com/rancher/k3d/releases/download/v4.4.4/k3d-linux-arm64
+    linux-arm64: sha256:79ce0b61123d7c8727d9eea2dc423cfe7bde55396bd7c16f8f9f00b7e500bc02
+    # https://github.com/rancher/k3d/releases/download/v4.4.4/k3d-windows-amd64.exe
+    windows-amd64: sha256:1e09e00ee830247ededc3c4718e62f89c1ec7a634fcdf9defb76d124e6a43b83
+  v4.4.5:
+    # https://github.com/rancher/k3d/releases/download/v4.4.5/k3d-darwin-amd64
+    darwin-amd64: sha256:99991fa0e1b6461c138a0dd3a596475045bd6f7a3b3a1668dd7f761e43a2884c
+    # https://github.com/rancher/k3d/releases/download/v4.4.5/k3d-linux-amd64
+    linux-amd64: sha256:a3a380b918e619b8bb5dcc2acb44b196e2bb772bc0db8e9423c50f6ee5284552
+    # https://github.com/rancher/k3d/releases/download/v4.4.5/k3d-linux-386
+    linux-386: sha256:23a144e8596d945c7660f5c24220e5a41d4fd725fef75ee4869f91aea89e0040
+    # https://github.com/rancher/k3d/releases/download/v4.4.5/k3d-linux-arm
+    linux-arm: sha256:6ebd392415c36c7ade3f2ede12872ee65c4a45d8d62c986e4ca94602a725d176
+    # https://github.com/rancher/k3d/releases/download/v4.4.5/k3d-linux-arm64
+    linux-arm64: sha256:4967f3a9a58ebce67fdf6f60a8a0eeba60f43a9789dc0fa927be91b7c8688f19
+    # https://github.com/rancher/k3d/releases/download/v4.4.5/k3d-windows-amd64.exe
+    windows-amd64: sha256:a09c94c2dbf8f3fa907d85913be1ad452144fd281e2a4964959ef91a0a12b786
