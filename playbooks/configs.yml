@@ -51,31 +51,38 @@
       mode: 0600
     become: no
 
-  - name: Copy openvpn-dt script file
-    template:
-      src: templates/openvpn-dt.j2
-      dest: /usr/bin/openvpn-dt
-      mode: 0755
+  # - name: Copy openvpn-dt script file
+  #   template:
+  #     src: templates/openvpn-dt.j2
+  #     dest: /usr/bin/openvpn-dt
+  #     mode: 0755
 
-  - name: Create /etc/openvpn/scripts/
-    file:
-      path: /etc/openvpn/scripts
-      state: directory
-      mode: 0755
-      recurse: yes
+  # - name: Create /etc/openvpn/scripts/
+  #   file:
+  #     path: /etc/openvpn/scripts
+  #     state: directory
+  #     mode: 0755
+  #     recurse: yes
 
-  - name: Copy update-systemd-resolved
+  # - name: Copy update-systemd-resolved
+  #   copy:
+  #     src: files/update-systemd-resolved
+  #     dest: /etc/openvpn/scripts/update-systemd-resolved
+  #     mode: 0755
+
+  - name: Copy gitconfig
     copy:
-      src: files/update-systemd-resolved
-      dest: /etc/openvpn/scripts/update-systemd-resolved
-      mode: 0755
+      src: files/gitconfig
+      dest: ~/.gitconfig
+      mode: 0600
+    become: no
 
-  - name: Link to /run/systemd/resolve/stub-resolv.conf
-    file:
-      src: /run/systemd/resolve/stub-resolv.conf
-      dest: /etc/resolv.conf
-      state: link
-      force: yes
+  # - name: Link to /run/systemd/resolve/stub-resolv.conf
+  #   file:
+  #     src: /run/systemd/resolve/stub-resolv.conf
+  #     dest: /etc/resolv.conf
+  #     state: link
+  #     force: yes
 
   - name: Enable and start systemd-resolved
     systemd:
