@@ -1,0 +1,8 @@
+[pull]
+	rebase = false
+[user]
+	email = mike.muransky@gmail.com
+[includeIf "gitdir:~/Documents/LABLABS/"]
+	path = ~/Documents/LABLABS/.gitconfig-lablabs
+[includeIf "gitdir:~/Documents/HOME/"]
+  path = ~/Documents/HOME/.gitconfig-home
