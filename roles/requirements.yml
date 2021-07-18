@@ -34,4 +34,4 @@
   version: master
 
 - src:     monolithprojects.homebrew
-  version: master
+  version: 1.0.2

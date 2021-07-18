@@ -50,12 +50,8 @@
       extra_args: --upgrade
 
   - name: Install and upgrade brew formulaes
-    community.general.homebrew:
-      name: "{{ brew_formulaes }}"
-      state: latest
-      update_homebrew: yes
-      path: /home/linuxbrew/.linuxbrew/bin
-    become: false
+    import_role:
+      name: monolithprojects.homebrew
 
   # - name: Install HashiCorp tools
   #   import_role:

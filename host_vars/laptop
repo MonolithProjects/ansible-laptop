@@ -3,7 +3,7 @@ second_display: "DisplayPort-1"
 second_display_scale: "0.9"
 docker_bip: "172.99.0.1/16"
 
-brew_formulaes:
+brew_formulae:
   - aws-vault
   - helm
   - helmfile
