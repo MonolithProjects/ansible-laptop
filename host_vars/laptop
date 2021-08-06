@@ -110,13 +110,13 @@ hashicorp_tools:
   #  version: 1.6.4
   #  state: absent
   - name: terraform
-    version: 0.14.7
+    version: 1.0.4
     state: present
   # - name: vagrant
   #   version: 2.2.7
   #   state: present
   - name: vault
-    version: 1.6.1
+    version: 1.7.2
     state: present
   - name: waypoint
     version: 0.2.0
