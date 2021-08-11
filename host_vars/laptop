@@ -79,6 +79,7 @@ snap_packages_classic:
 pip_packages:
   - ansible-lint
   - flake8
+  - hvac
   - molecule
   - molecule-docker
   - openshift
