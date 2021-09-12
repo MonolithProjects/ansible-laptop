@@ -38,6 +38,7 @@ dnf_packages:
   - make
   - moby-engine
   - mysql
+  - nomad
   - obs-studio
   - openconnect
   - openldap-clients
@@ -52,6 +53,7 @@ dnf_packages:
   - steam
   - system-config-printer
   - telegram-desktop
+  - terraform
   - tilix
   - v4l-utils
   - vim-enhanced

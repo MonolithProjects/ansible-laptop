@@ -69,6 +69,11 @@
       gpgkey: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/pubkey.gpg
       baseurl: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/fedora-$releasever-$basearch/
 
+  - name: Set HasniCorp Repo
+    get_url:
+      url: https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+      dest: /etc/yum.repos.d/hashicorp.repo
+
   - name: Install EPEL Repo
     import_role:
       name: robertdebock.epel
