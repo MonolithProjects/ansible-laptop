@@ -74,6 +74,11 @@
       url: https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
       dest: /etc/yum.repos.d/hashicorp.repo
 
+  - name: Set Tailscale repo
+    get_url:
+      url: https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+      dest: /etc/yum.repos.d/tailscale.repo
+
   - name: Install EPEL Repo
     import_role:
       name: robertdebock.epel

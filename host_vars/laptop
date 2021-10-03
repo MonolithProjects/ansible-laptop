@@ -53,6 +53,7 @@ dnf_packages:
   - slack
   - steam
   - system-config-printer
+  - tailscale
   - telegram-desktop
   - terraform
   - tilix
