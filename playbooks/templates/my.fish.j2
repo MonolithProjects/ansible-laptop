@@ -6,7 +6,15 @@ source ~/.asdf/asdf.fish
 
 function awsve
   set AWS_VAULT
-  aws-vault exec $argv --
+  if [ $argv != pxfd_cn ] && [ $argv != clear ]
+    aws-vault exec $argv --
+  else
+    if [ $argv = prod_cn ]
+      aws-vault exec $argv --no-session --
+    else
+      set -e AWS_SESSION_TOKEN AWS_SECURITY_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN
+    end
+  end
 end
 
 function fish_prompt
