@@ -1,17 +1,22 @@
 ---
 galaxy_info:
   role_name: awscli2
-  author: Olivier Pichon <op@dzangolab.com>
+  author: dzangolab
   description: Install and configure AWS CLI v2
   company: Dzango Technologies Limited
   min_ansible_version: 2.0
   platforms:
-  - name: Ubuntu
-    versions:
-    - 18.04
-    - 20.04
+    - name: Ubuntu
+      versions:
+        - 18.04
+        - 20.04
+    - name: Debian
+      versions:
+        - all
   galaxy_tags:
     - aws
     - awscli
 
-dependencies: []
+  dependencies: []
+
+  license: MIT

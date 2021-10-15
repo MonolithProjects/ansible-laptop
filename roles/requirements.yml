@@ -1,5 +1,8 @@
 ---
 #  ansible-galaxy install -r ./roles/requirements.yml --roles-path=./roles
+- src:     andrewrothstein.argocd
+  version: master
+
 - src:     andrewrothstein.k3d
   version: master
 

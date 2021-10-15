@@ -57,13 +57,17 @@
     import_role:
       name: andrewrothstein.kubeseal
 
-  - name: Install k3d
-    import_role:
-      name: andrewrothstein.k3d
+  # - name: Install k3d
+  #   import_role:
+  #     name: andrewrothstein.k3d
 
   - name: Install k9s
     import_role:
       name: andrewrothstein.k9s
+  
+  - name: ArgoCD CLI
+    import_role:
+      name: andrewrothstein.argocd
 
   # - name: Install asdf
   #   import_role:
