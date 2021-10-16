@@ -4,11 +4,6 @@
   become: yes
   gather_facts: yes
   tasks:
-  # - name: Update system
-  #   import_role:
-  #     name: robertdebock.update
-  #   vars:
-  #     update_reboot: no
 
   - name: Install pip
     import_role:
@@ -57,14 +52,10 @@
     import_role:
       name: andrewrothstein.kubeseal
 
-  # - name: Install k3d
-  #   import_role:
-  #     name: andrewrothstein.k3d
-
   - name: Install k9s
     import_role:
       name: andrewrothstein.k9s
-  
+
   - name: ArgoCD CLI
     import_role:
       name: andrewrothstein.argocd

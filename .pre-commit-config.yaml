@@ -5,5 +5,5 @@ repos:
       -   id: check-yaml
           args: [--allow-multiple-documents]
       -   id: end-of-file-fixer
-    #       exclude: ^ansible/playbooks/files/
-    #   -   id: trailing-whitespace
+          exclude: ^roles
+      -   id: trailing-whitespace

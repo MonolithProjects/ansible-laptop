@@ -29,7 +29,7 @@ dnf_packages:
   - gnome-tweak-tool
   - guvcview
   - h264enc
-  - icedtea-web 
+  - icedtea-web
   - java-1.8.0-openjdk.x86_64
   - jack-audio-connection-kit-dbus
   - jq
@@ -42,7 +42,6 @@ dnf_packages:
   - mysql
   - neofetch
   - nomad
-  - obs-studio
   - openconnect
   - openldap-clients
   - python3-devel
@@ -79,8 +78,6 @@ snap_packages:
   - yq
 
 snap_packages_classic:
-#  - helm
-#  - kubectl
   - shotcut
 
 pip_packages:
@@ -93,7 +90,7 @@ pip_packages:
   - openstack-heat
   - pre-commit
   - python-cinderclient
-  - python-keystoneclient 
+  - python-keystoneclient
   - python-novaclient
   - python-openstackclient
   - python-swiftclient
@@ -103,32 +100,6 @@ global_pip_packages:
   - docker
 
 fisher_packages:
-
-hashicorp_tools:
-  # - name: boundary
-  #   version: 0.1.0
-  #   state: present
-  # - name: consul
-  #   version: 1.7.0
-  #   state: present
-  - name: nomad
-    version: 1.1.4
-    state: present
-  #- name: packer
-  #  version: 1.6.4
-  #  state: absent
-  - name: terraform
-    version: 1.0.4
-    state: present
-  # - name: vagrant
-  #   version: 2.2.7
-  #   state: present
-  - name: vault
-    version: 1.7.2
-    state: present
-  - name: waypoint
-    version: 0.2.0
-    state: present
 
 fisher_addons:
   - barnybug/docker-fish-completion
