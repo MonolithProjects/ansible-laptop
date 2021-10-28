@@ -10,7 +10,7 @@ host vars
 
 ## How to
 
-Simply just run `ansible-playbook site.yml`
+run `ansible-playbook site.yml`
 
 ## Available tags
 
