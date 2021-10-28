@@ -51,12 +51,6 @@
       mode: 0600
     become: no
 
-  # - name: Copy openvpn-dt script file
-  #   template:
-  #     src: templates/openvpn-dt.j2
-  #     dest: /usr/bin/openvpn-dt
-  #     mode: 0755
-
   # - name: Copy update-systemd-resolved
   #   copy:
   #     src: files/update-systemd-resolved
