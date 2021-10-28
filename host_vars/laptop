@@ -25,6 +25,7 @@ dnf_packages:
   - gh
   - gimp
   - git
+  - golang
   - google-cloud-sdk
   - gnome-tweak-tool
   - guvcview
