@@ -59,13 +59,3 @@
   - name: ArgoCD CLI
     import_role:
       name: andrewrothstein.argocd
-
-  # - name: Install asdf
-  #   import_role:
-  #     name: cimon-io.asdf
-  #   vars:
-  #     asdf_plugins: []
-
-  # - name: Set up aws-cli2
-  #   import_role:
-  #     name: dzangolab.awscli2
