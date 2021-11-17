@@ -1,6 +1,8 @@
 if status --is-interactive
  abbr -a -g a argocd
+ abbr -a -g ag ansible-galaxy
  abbr -a -g ap ansible-playbook
+ abbr -a -g al ansible-lint
  abbr -a -g btop bpytop
  abbr -a -g cdhm "cd ~/Documents/HOME_PROJECTS"
  abbr -a -g cdls "cd ~/Documents/LABLABS"
@@ -20,8 +22,6 @@ if status --is-interactive
  abbr -a -g tfaa "terraform apply -auto-approve"
  abbr -a -g tfd "terraform destroy"
  abbr -a -g unsetk "set -e KUBECONFIG"
- abbr -a -g update "ansible-playbook ~/Documents/HOME_PROJECTS/ansible-laptop/site.yml"
- abbr -a -g scaleup "sudo /usr/bin/xrandr --output {{ second_display }} --scale {{ second_display_scale }}x{{ second_display_scale }}"
- abbr -a -g scaledown "sudo /usr/bin/xrandr --output {{ second_display }} --scale 1x1"
+ abbr -a -g update "ANSIBLE_CONFIG=~/Documents/HOME_PROJECTS/ansible-laptop/ansible.cfg ansible-playbook ~/Documents/HOME_PROJECTS/ansible-laptop/site.yml -i ~/Documents/HOME_PROJECTS/ansible-laptop/inventory.yml"
  abbr -a -g vpn-ras "sudo openconnect --protocol=anyconnect -u muransky --authgroup SSLVPN-LDAP firmavpn.azet.sk"
 end

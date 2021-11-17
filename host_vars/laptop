@@ -5,6 +5,7 @@ brew_formulae:
   - aws-vault
   - helm
   - helmfile
+  - homeport/tap/havener
   - k3d
 
 dnf_packages:
@@ -14,6 +15,7 @@ dnf_packages:
   - code
   - consul
   - crictl
+  - docker-ce
   - dnf-plugin-system-upgrade
   - eidklient
   - fish
@@ -85,8 +87,9 @@ pip_packages:
   - hvac
   - molecule
   - molecule-docker
+  - netaddr
   - openshift
-  - openstack-heat
+  # - openstack-heat
   - pre-commit
   - python-cinderclient
   - python-keystoneclient
