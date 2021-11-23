@@ -83,6 +83,7 @@ snap_packages_classic:
 
 pip_packages:
   - ansible-lint
+  - checkov
   - flake8
   - hvac
   - molecule
