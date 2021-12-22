@@ -2,11 +2,14 @@ wayland: "true" #string
 docker_bip: "172.99.0.1/16"
 
 brew_formulae:
+  - act
   - aws-vault
+  - glow
   - helm
   - helmfile
   - homeport/tap/havener
   - k3d
+  - terraform-docs
 
 dnf_packages:
   - bpytop
@@ -15,7 +18,7 @@ dnf_packages:
   - code
   - consul
   - crictl
-  - docker-ce
+  # - docker-ce
   - dnf-plugin-system-upgrade
   - eidklient
   - fish
