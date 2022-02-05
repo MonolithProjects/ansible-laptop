@@ -54,6 +54,14 @@
       gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
       baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
 
+  - name: Set Azure Repo
+    yum_repository:
+      name: azure-cli
+      description: Azure CLI
+      file: azure-cli
+      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+      baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+
   - name: Set Yarn Repo
     yum_repository:
       name: yarn

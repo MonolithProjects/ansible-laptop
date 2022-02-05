@@ -12,6 +12,7 @@ brew_formulae:
   - terraform-docs
 
 dnf_packages:
+  - azure-cli
   - bpytop
   - brave-keyring
   - brave-browser
