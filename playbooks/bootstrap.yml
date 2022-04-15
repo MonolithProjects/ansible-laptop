@@ -9,6 +9,22 @@
   - name: Connection test
     ping:
 
+######### Overlay2 for Docker #########
+
+  - name: Create a directory for Overlay2
+    file:
+      path: /home/overlay2
+      state: directory
+      mode: '0755'
+
+  - name: Mount and bind a volume
+    mount:
+      path: /home/overlay2
+      src: /var/lib/docker/overlay2
+      opts: bind
+      state: mounted
+      fstype: none
+
 ######### DNF Repositories ############
 
   - name: Set Microsoft Repo
