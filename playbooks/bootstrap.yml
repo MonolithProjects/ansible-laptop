@@ -19,8 +19,8 @@
 
   - name: Mount and bind a volume
     mount:
-      path: /home/overlay2
-      src: /var/lib/docker/overlay2
+      path: /var/lib/docker/overlay2
+      src: /home/overlay2
       opts: bind
       state: mounted
       fstype: none
