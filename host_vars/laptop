@@ -5,10 +5,14 @@ brew_formulae:
   - act
   - aws-vault
   - glow
+  - hadolint
+  - havener
   - helm
   - helmfile
   - homeport/tap/havener
+  - hugo
   - k3d
+  - nerdctl
   - terraform-docs
 
 dnf_packages:
