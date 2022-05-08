@@ -1,3 +1,4 @@
 {
-"bip": "{{ docker_bip }}"
+"bip": "{{ docker_bip | default( '172.17.0.0/16' )}}",
+"data-root": "{{ docker_root_path | default( '/var/lib/docker' )}}"
 }

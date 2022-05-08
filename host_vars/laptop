@@ -1,5 +1,6 @@
 wayland: "true" #string
 docker_bip: "172.99.0.1/16"
+docker_root_path: /home/docker
 
 brew_formulae:
   - act
@@ -14,6 +15,7 @@ brew_formulae:
   - k3d
   - nerdctl
   - terraform-docs
+  - tfsec
 
 dnf_packages:
   - azure-cli

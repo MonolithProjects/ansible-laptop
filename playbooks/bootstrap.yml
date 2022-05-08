@@ -9,21 +9,13 @@
   - name: Connection test
     ping:
 
-######### Overlay2 for Docker #########
+######### Docker directory ###########
 
   - name: Create a directory for Overlay2
     file:
-      path: /home/overlay2
+      path: /home/docker
       state: directory
       mode: '0755'
-
-  - name: Mount and bind a volume
-    mount:
-      path: /var/lib/docker/overlay2
-      src: /home/overlay2
-      opts: bind
-      state: mounted
-      fstype: none
 
 ######### DNF Repositories ############
 
