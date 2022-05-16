@@ -117,3 +117,21 @@
       path: /etc/gdm/custom.conf
       regexp: 'WaylandEnable='
       line: 'WaylandEnable={{ wayland }}'
+
+  - ansible.posix.sysctl:
+      name: fs.inotify.max_queued_events
+      value: '524288'
+      sysctl_file: /etc/sysctl.d/99-sysctl.conf
+      reload: no
+
+  - ansible.posix.sysctl:
+      name: fs.inotify.max_user_instances
+      value: '512'
+      sysctl_file: /etc/sysctl.d/99-sysctl.conf
+      reload: no
+
+  - ansible.posix.sysctl:
+      name: fs.inotify.max_user_watches
+      value: '524288'
+      sysctl_file: /etc/sysctl.d/99-sysctl.conf
+      reload: no
