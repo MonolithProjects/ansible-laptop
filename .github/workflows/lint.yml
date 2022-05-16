@@ -12,6 +12,7 @@ jobs:
         with:
           targets: |
             site.yml
+            playbooks/additions.yml
             playbooks/bootstrap.yml
             playbooks/configs.yml
             playbooks/install.yml
