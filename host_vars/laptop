@@ -95,6 +95,7 @@ pip_packages:
   - ansible-lint
   - checkov
   - flake8
+  - grafana_wtf
   - hvac
   - molecule
   - molecule-docker
