@@ -44,6 +44,13 @@
       mode: 0600
     become: no
 
+  - name: Copy my prompt
+    copy:
+      src: templates/my_prompt.json
+      dest: ~/.config/fish/.my_prompt.json
+      mode: 0600
+    become: no
+
   - name: Copy my fish abbreviations file
     template:
       src: templates/abbr.fish.j2

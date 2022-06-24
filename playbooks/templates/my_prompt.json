@@ -1,0 +1,83 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#e0e2ea",
+          "style": "plain",
+          "template": "<#ddfb86>\u250f[</>{{ .UserName }}<#ddfb86>]</>",
+          "type": "session"
+        },
+        {
+          "foreground": "#ddfb86",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "<#ddfb86>--[</>{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }}<#ec705f> \u25cf </>{{ end }}{{ if .Staging.Changed }}<#ec705f> \u25cf </>{{ end }}<#ddfb86>]</>",
+          "type": "git"
+        },
+        {
+          "foreground": "#ec705f",
+          "style": "plain",
+          "template": "<#ddfb86>--[</>{{.Profile}}{{if .Region}}@{{.Region}}{{end}}<#ddfb86>]</>",
+          "type": "aws"
+        },
+        {
+          "foreground": "#ddfb86",
+          "style": "plain",
+          "template": "<#ddfb86>--[</>{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}<#ddfb86>]</>",
+          "type": "kubectl"
+        },
+        {
+          "foreground": "#ddfb86",
+          "style": "plain",
+          "template": "<#ddfb86>[</>\uf0e7<#ddfb86>]</>",
+          "type": "root"
+        },
+        {
+          "foreground": "#ec705f",
+          "style": "plain",
+          "template": "<#ec705f>[x</>{{ .Meaning }}<#ec705f>]</>",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#e0e2ea",
+          "properties": {
+            "style": "full"
+          },
+          "style": "plain",
+          "template": "<#ddfb86>\u2516[</>{{ .Path }}<#ddfb86>]</>",
+          "type": "path"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#ec705f",
+          "style": "plain",
+          "template": " \ue602 ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
