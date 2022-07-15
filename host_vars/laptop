@@ -67,7 +67,7 @@ dnf_packages:
   - system-config-printer
   - tailscale
   - telegram-desktop
-  - terraform
+  # - terraform  #asdf
   - tilix
   - v4l-utils
   - vim-enhanced

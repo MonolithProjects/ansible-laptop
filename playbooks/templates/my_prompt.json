@@ -22,7 +22,7 @@
           "type": "git"
         },
         {
-          "foreground": "#ec705f",
+          "foreground": "#ddfb86",
           "style": "plain",
           "template": "<#ddfb86>--[</>{{.Profile}}{{if .Region}}@{{.Region}}{{end}}<#ddfb86>]</>",
           "type": "aws"

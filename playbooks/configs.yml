@@ -37,6 +37,13 @@
       mode: 0755
       recurse: yes
 
+  - name: Copy fish config file
+    template:
+      src: templates/config.fish
+      dest: ~/.config/fish/config.fish
+      mode: 0600
+    become: no
+
   - name: Copy my fish config file
     template:
       src: templates/my.fish.j2
