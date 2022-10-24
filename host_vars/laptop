@@ -5,6 +5,7 @@ docker_root_path: /home/docker
 brew_formulae:
   - act
   - aws-vault
+  - dive
   - glow
   - hadolint
   - havener
