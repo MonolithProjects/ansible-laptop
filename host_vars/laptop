@@ -93,7 +93,6 @@ snap_packages_classic:
   - shotcut
 
 pip_packages:
-  - ansible-lint
   - checkov
   - flake8
   - grafana_wtf

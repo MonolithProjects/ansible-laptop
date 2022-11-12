@@ -9,6 +9,15 @@
     import_role:
       name: geerlingguy.pip
 
+  # - name: Update all pip packages (for pip >= 2.33)
+  #   shell: |
+  #     set -o pipefail
+  #     pip --disable-pip-version-check list --outdated --format=json | python -c "import json, sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))"| xargs -n1 pip install -U
+  #   args:
+  #     executable: /bin/bash
+  #   changed_when: false
+
+
   - name: Uninstall DNF Packages
     package:
       name: "{{ dnf_packages_absent }}"
