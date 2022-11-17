@@ -15,7 +15,7 @@
     owner: "{{ homebrew_user }}"
     mode: 0644
     create: yes
-  when: 
+  when:
     - user_shell.stdout == "bash" and ansible_os_family == "Debian"
 
 - name: Add homebrew path to system-wide $PATH for bash shell (RedHat OS Family).
@@ -25,7 +25,7 @@
     owner: "{{ homebrew_user }}"
     mode: 0644
     create: yes
-  when: 
+  when:
     - user_shell.stdout == "bash" and ansible_os_family == "RedHat"
 
 - name: Add homebrew path to system-wide $PATH for fish shell.

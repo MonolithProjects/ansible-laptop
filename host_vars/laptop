@@ -14,12 +14,15 @@ brew_formulae:
   - homeport/tap/havener
   - hugo
   - k3d
+  - kubectx
+  - kubernetes-cli
   - nerdctl
+  - oh-my-posh
   - terraform-docs
   - tfsec
 
 dnf_packages:
-  - azure-cli
+  # - azure-cli
   - bpytop
   - brave-keyring
   - brave-browser
@@ -82,8 +85,6 @@ dnf_packages:
 
 dnf_packages_absent:
   - docker
-  - openfortivpn
-  - openvpn
 
 snap_packages:
   - spotify
@@ -100,14 +101,7 @@ pip_packages:
   - molecule
   - molecule-docker
   - netaddr
-  - openshift
-  # - openstack-heat
   - pre-commit
-  - python-cinderclient
-  - python-keystoneclient
-  - python-novaclient
-  - python-openstackclient
-  - python-swiftclient
   - tox
 
 global_pip_packages:

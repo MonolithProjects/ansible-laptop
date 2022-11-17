@@ -3,7 +3,7 @@
 hashicorp_url: https://releases.hashicorp.com
 
 # Hashicorp tools and their versions you want
-# Supported state values are: present, reinstall, absent 
+# Supported state values are: present, reinstall, absent
 hashicorp_tools:
   []
     # - name: boundary

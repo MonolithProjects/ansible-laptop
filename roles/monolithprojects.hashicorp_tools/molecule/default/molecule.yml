@@ -15,7 +15,7 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: yes
-    pre_build_image: yes  
+    pre_build_image: yes
   - name: Fedora33
     image: monolithprojects/systemd-fedora32:latest
     command: /sbin/init
@@ -50,7 +50,7 @@ provisioner:
   name: ansible
   playbooks:
     converge: converge.yml
-    cleanup: cleanup.yml 
+    cleanup: cleanup.yml
   log: false
 verifier:
   name: ansible
