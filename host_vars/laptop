@@ -29,7 +29,7 @@ dnf_packages:
   - code
   - consul
   - crictl
-  # - docker-ce
+  - docker-ce
   - dnf-plugin-system-upgrade
   - eidklient
   - fish
@@ -53,7 +53,7 @@ dnf_packages:
   - libvirt-daemon-kvm
   - lolcat
   - make
-  - moby-engine
+  # - moby-engine
   - mysql
   - neofetch
   - nomad
