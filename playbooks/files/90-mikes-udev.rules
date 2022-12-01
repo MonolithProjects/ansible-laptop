@@ -1,1 +1,1 @@
-ACTION=="add", SUBSYSTEM=="bluetooth", ATTRS{address}=="bc:d0:74:b7:f7:5f", RUN+="/usr/bin/bluetoothctl connect bc:d0:74:b7:f7:5"
+ACTION=="add", SUBSYSTEM=="bluetooth", ATTRS{address}=="bc:d0:74:b7:f7:5f", RUN+="/usr/bin/bluetoothctl connect bc:d0:74:b7:f7:5f"
