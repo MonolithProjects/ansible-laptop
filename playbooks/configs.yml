@@ -149,4 +149,4 @@
       src: files/90-mikes-udev.rules
       dest: /etc/udev/rules.d/90-mikes-udev.rules
       mode: 0644
-    notify: restart udev
+    notify: reload udev

@@ -11,8 +11,6 @@
     name: docker
     state: restarted
 
-- name: restart udev
+- name: reload udev
   become: yes
-  systemd:
-    name: udev
-    state: restarted
+  shell: udevadm control --reload-rules && udevadm trigger
