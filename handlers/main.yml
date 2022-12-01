@@ -10,3 +10,9 @@
   systemd:
     name: docker
     state: restarted
+
+- name: restart udev
+  become: yes
+  systemd:
+    name: udev
+    state: restarted
