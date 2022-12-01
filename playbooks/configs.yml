@@ -6,11 +6,8 @@
   handlers:
   - import_tasks: ../handlers/main.yml
   tasks:
-  - name: Max User watches - sysctl
-    lineinfile:
-      path: /etc/sysctl.d/99-sysctl.conf
-      regexp: 'fs.inotify.max_user_watches'
-      line: 'fs.inotify.max_user_watches = 524288'
+
+###### Terminal ###########################################
 
   - name: CLI history backward
     lineinfile:
@@ -23,12 +20,6 @@
       path: /etc/inputrc
       regexp: ' history-search-forward'
       line: '"\e[B": history-search-forward'
-
-  - name: Add mail server
-    lineinfile:
-      path: /etc/hosts
-      regexp: 'mail.dt-one.com$'
-      line: '10.239.107.6     mail.dt-one.com'
 
   - name: Create ~/.config/fish/conf.d/
     file:
@@ -65,12 +56,6 @@
       mode: 0600
     become: no
 
-  # - name: Copy update-systemd-resolved
-  #   copy:
-  #     src: files/update-systemd-resolved
-  #     dest: /etc/openvpn/scripts/update-systemd-resolved
-  #     mode: 0755
-
   - name: Copy gitconfig
     copy:
       src: files/gitconfig
@@ -78,18 +63,15 @@
       mode: 0600
     become: no
 
-  # - name: Link to /run/systemd/resolve/stub-resolv.conf
-  #   file:
-  #     src: /run/systemd/resolve/stub-resolv.conf
-  #     dest: /etc/resolv.conf
-  #     state: link
-  #     force: yes
+###### DNS ################################################
 
   - name: Enable and start systemd-resolved
     systemd:
       name: systemd-resolved
       enabled: yes
       state: started
+
+###### Docker #############################################
 
   - name: Docker custom config
     template:
@@ -126,11 +108,21 @@
       env:
         TZ: "CET"
 
+####### Gnome #############################################
+
   - name: Xorg vs. Wayland
     lineinfile:
       path: /etc/gdm/custom.conf
       regexp: 'WaylandEnable='
       line: 'WaylandEnable={{ wayland }}'
+
+###### Kernel config ######################################
+
+  - ansible.posix.sysctl:
+      name: fs.inotify.max_queued_events
+      value: '524288'
+      sysctl_file: /etc/sysctl.d/99-sysctl.conf
+      reload: no
 
   - ansible.posix.sysctl:
       name: fs.inotify.max_queued_events
@@ -149,3 +141,11 @@
       value: '524288'
       sysctl_file: /etc/sysctl.d/99-sysctl.conf
       reload: no
+
+###### Udev rules #########################################
+
+  - name: Copy custom udev rules
+    copy:
+      src: files/90-mikes-udev.rules
+      dest: /etc/udev/rules.d/90-mikes-udev.rules
+      mode: 0644

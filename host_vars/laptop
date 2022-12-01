@@ -94,6 +94,7 @@ snap_packages_classic:
   - shotcut
 
 pip_packages:
+  - ansible-lint
   - checkov
   - flake8
   - grafana_wtf
@@ -102,6 +103,7 @@ pip_packages:
   - molecule-docker
   - netaddr
   - pre-commit
+  - pyyaml
   - tox
 
 global_pip_packages:
