@@ -29,7 +29,6 @@ dnf_packages:
   - code
   - consul
   - crictl
-  - docker-ce
   - dnf-plugin-system-upgrade
   - eidklient
   - fish
@@ -86,8 +85,7 @@ dnf_packages:
   - yubikey-personalization-gui
   - ShellCheck
 
-dnf_packages_absent:
-  - docker
+dnf_packages_absent: []
 
 snap_packages:
   - spotify

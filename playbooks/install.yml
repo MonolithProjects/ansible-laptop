@@ -17,6 +17,9 @@
   #     executable: /bin/bash
   #   changed_when: false
 
+  - name: Install Docker
+    import_role:
+      name: geerlingguy.docker
 
   - name: Uninstall DNF Packages
     package:
