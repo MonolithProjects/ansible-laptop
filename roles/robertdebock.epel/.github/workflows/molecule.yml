@@ -18,13 +18,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
-        uses: actions/checkout@v2
-        with:
-          path: "${{ github.repository }}"
-      - name: molecule
-        uses: robertdebock/molecule-action@2.7.2
-        with:
-          command: lint
+        uses: actions/checkout@v3
+      - name: ansible-lint
+        uses: ansible-community/ansible-lint-action@main
   test:
     needs:
       - lint
@@ -36,10 +32,14 @@ jobs:
           - image: "amazonlinux"
             tag: "latest"
           - image: "enterpriselinux"
+            tag: "7"
+          - image: "enterpriselinux"
+            tag: "8"
+          - image: "enterpriselinux"
             tag: "latest"
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: "${{ github.repository }}"
       - name: disable apparmor for mysql
@@ -47,7 +47,7 @@ jobs:
       - name: parse apparmor for mysql
         run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       - name: molecule
-        uses: robertdebock/molecule-action@2.7.2
+        uses: robertdebock/molecule-action@5.0.2
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
