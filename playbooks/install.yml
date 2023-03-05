@@ -1,73 +1,65 @@
 ---
 - name: Install Software
   hosts: laptop
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
   tasks:
 
-  - name: Install pip
-    import_role:
-      name: geerlingguy.pip
+    - name: Install pip
+      ansible.builtin.import_role:
+        name: geerlingguy.pip
 
-  # - name: Update all pip packages (for pip >= 2.33)
-  #   shell: |
-  #     set -o pipefail
-  #     pip --disable-pip-version-check list --outdated --format=json | python -c "import json, sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))"| xargs -n1 pip install -U
-  #   args:
-  #     executable: /bin/bash
-  #   changed_when: false
+    - name: Install Docker
+      ansible.builtin.import_role:
+        name: geerlingguy.docker
 
-  - name: Install Docker
-    import_role:
-      name: geerlingguy.docker
+    - name: Uninstall DNF Packages
+      ansible.builtin.package:
+        name: "{{ dnf_packages_absent }}"
+        state: absent
 
-  - name: Uninstall DNF Packages
-    package:
-      name: "{{ dnf_packages_absent }}"
-      state: absent
+    - name: Install DNF Packages
+      ansible.builtin.package:
+        name: "{{ dnf_packages }}"
+        state: present
 
-  - name: Install DNF Packages
-    package:
-      name: "{{ dnf_packages }}"
-      state: present
+    - name: Install Snap Packages
+      community.general.packaging.os.snap:
+        name: "{{ snap_packages }}"
 
-  - name: Install Snap Packages
-    snap:
-      name: "{{ snap_packages }}"
+    - name: Install Snap Packages (Classic)
+      community.general.packaging.os.snap:
+        name: "{{ snap_packages_classic }}"
+        classic: true
 
-  - name: Install Snap Packages (Classic)
-    snap:
-      name: "{{ snap_packages_classic }}"
-      classic: yes
+    - name: Upgrade pip
+      ansible.builtin.pip:
+        name: pip
+        extra_args: --upgrade
 
-  - name: Upgrade pip
-    pip:
-      name: pip
-      extra_args: --upgrade
+    - name: Install user pip packages
+      ansible.builtin.pip:
+        name: "{{ pip_packages }}"
+        extra_args: --user --upgrade
+      become: false
 
-  - name: Install user pip packages
-    pip:
-      name: "{{ pip_packages }}"
-      extra_args: --user --upgrade
-    become: no
+    - name: Install global pip packages
+      ansible.builtin.pip:
+        name: "{{ global_pip_packages }}"
+        extra_args: --upgrade
 
-  - name: Install global pip packages
-    pip:
-      name: "{{ global_pip_packages }}"
-      extra_args: --upgrade
+    - name: Install and upgrade brew formulaes
+      ansible.builtin.import_role:
+        name: monolithprojects.homebrew
 
-  - name: Install and upgrade brew formulaes
-    import_role:
-      name: monolithprojects.homebrew
+    - name: Install Kubeseal client
+      ansible.builtin.import_role:
+        name: andrewrothstein.kubeseal
 
-  - name: Install Kubeseal client
-    import_role:
-      name: andrewrothstein.kubeseal
+    - name: Install k9s
+      ansible.builtin.import_role:
+        name: andrewrothstein.k9s
 
-  - name: Install k9s
-    import_role:
-      name: andrewrothstein.k9s
-
-  - name: ArgoCD CLI
-    import_role:
-      name: andrewrothstein.argocd
+    - name: ArgoCD CLI
+      ansible.builtin.import_role:
+        name: andrewrothstein.argocd

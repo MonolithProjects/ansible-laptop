@@ -2,13 +2,13 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks:
-    - id: check-yaml
-      args: [--allow-multiple-documents]
-    - id: end-of-file-fixer
-      exclude: ^roles
-    - id: trailing-whitespace
-    - id: trailing-whitespace
-    - id: check-merge-conflict
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+      - id: end-of-file-fixer
+        exclude: ^roles
+      - id: trailing-whitespace
+      - id: trailing-whitespace
+      - id: check-merge-conflict
 
   - repo: https://github.com/ansible/ansible-lint.git
     rev: v6.3.0

@@ -1,157 +1,161 @@
 ---
 - name: Bootstrap laptop
   hosts: laptop
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
   handlers:
-  - import_tasks: ../handlers/main.yml
+    - name: Import handlers
+      ansible.builtin.import_tasks: ../handlers/main.yml
   tasks:
-  - name: Connection test
-    ping:
+    - name: Connection test
+      ansible.builtin.ping:
 
 ######### Docker directory ###########
 
-  - name: Create a directory for Overlay2
-    file:
-      path: /home/docker
-      state: directory
-      mode: 0755
+    - name: Create a directory for Overlay2
+      ansible.builtin.file:
+        path: /home/docker
+        state: directory
+        mode: "0755"
 
-######### DNF Repositories ############
+  ######### DNF Repositories ############
 
-  - name: Set Microsoft Repo
-    yum_repository:
-      name: code
-      description: vscode
-      file: vscode
-      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-      baseurl: https://packages.microsoft.com/yumrepos/vscode
+    - name: Set Microsoft Repo
+      ansible.builtin.yum_repository:
+        name: code
+        description: vscode
+        file: vscode
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+        baseurl: https://packages.microsoft.com/yumrepos/vscode
 
-  - name: Set Slack Repo
-    yum_repository:
-      name: slack
-      description: Slack
-      file: slack
-      gpgcheck: false
-      gpgkey: https://packagecloud.io/slacktechnologies/slack/gpgkey
-      baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/21/{{ ansible_machine }}"
-      # No slack repo for fedora 32 :-(
-      #  baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/{{ ansible_distribution_major_version }}/{{ ansible_machine }}"
+    - name: Set Slack Repo
+      ansible.builtin.yum_repository:
+        name: slack
+        description: Slack
+        file: slack
+        gpgcheck: false
+        gpgkey: https://packagecloud.io/slacktechnologies/slack/gpgkey
+        baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/21/{{ ansible_machine }}"
+        # No slack repo for fedora 32 :-(
+        #  baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/ \
+        # {{ ansible_distribution_major_version }}/{{ ansible_machine }}"
 
-  - name: Set Docker package Repo
-    yum_repository:
-      name: docker
-      description: Docker dnf Repo
-      file: docker
-      gpgkey: https://download.docker.com/linux/fedora/gpg
-      baseurl: https://download.docker.com/linux/fedora/31/$basearch/stable
+    - name: Set Docker package Repo
+      ansible.builtin.yum_repository:
+        name: docker
+        description: Docker dnf Repo
+        file: docker
+        gpgkey: https://download.docker.com/linux/fedora/gpg
+        baseurl: https://download.docker.com/linux/fedora/31/$basearch/stable
 
-  # - name: Set VirtualBox Repo
-  #   yum_repository:
-  #     name: virtualbox
-  #     description: Fedora $releasever - $basearch - VirtualBox
-  #     file: virtualbox
-  #     gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
-  #     baseurl: http://download.virtualbox.org/virtualbox/rpm/fedora/$releasever/$basearch
+    # - name: Set VirtualBox Repo
+    #   ansible.builtin.yum_repository:
+    #     name: virtualbox
+    #     description: Fedora $releasever - $basearch - VirtualBox
+    #     file: virtualbox
+    #     gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
+    #     baseurl: http://download.virtualbox.org/virtualbox/rpm/fedora/$releasever/$basearch
 
-  - name: Set Brave Repo
-    yum_repository:
-      name: brave-browser
-      description: Brave browser
-      file: brave-browser
-      gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-      baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+    - name: Set Brave Repo
+      ansible.builtin.yum_repository:
+        name: brave-browser
+        description: Brave browser
+        file: brave-browser
+        gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+        baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
 
-  - name: Set Azure Repo
-    yum_repository:
-      name: azure-cli
-      description: Azure CLI
-      file: azure-cli
-      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-      baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+    - name: Set Azure Repo
+      ansible.builtin.yum_repository:
+        name: azure-cli
+        description: Azure CLI
+        file: azure-cli
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+        baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
 
-  - name: Set Yarn Repo
-    yum_repository:
-      name: yarn
-      description: Yarn Repo
-      file: yarn
-      gpgkey: https://dl.yarnpkg.com/rpm/pubkey.gpg
-      baseurl: https://dl.yarnpkg.com/rpm/
+    - name: Set Yarn Repo
+      ansible.builtin.yum_repository:
+        name: yarn
+        description: Yarn Repo
+        file: yarn
+        gpgkey: https://dl.yarnpkg.com/rpm/pubkey.gpg
+        baseurl: https://dl.yarnpkg.com/rpm/
 
-  - name: Enabled Gitflow repo
-    yum_repository:
-      name: elegos/gitflow
-      description: Gitflow repo
-      file: copr:copr.fedorainfracloud.org:elegos:gitflow.repo
-      gpgkey: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/pubkey.gpg
-      baseurl: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/fedora-$releasever-$basearch/
+    - name: Enabled Gitflow repo
+      ansible.builtin.yum_repository:
+        name: elegos/gitflow
+        description: Gitflow repo
+        file: copr:copr.fedorainfracloud.org:elegos:gitflow.repo
+        gpgkey: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/pubkey.gpg
+        baseurl: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/fedora-$releasever-$basearch/
 
-  - name: Set HasniCorp Repo
-    get_url:
-      url: https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
-      dest: /etc/yum.repos.d/hashicorp.repo
+    - name: Set HasniCorp Repo
+      ansible.builtin.get_url:
+        url: https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+        dest: /etc/yum.repos.d/hashicorp.repo
+        mode: "0644"
 
-  - name: Set Tailscale repo
-    get_url:
-      url: https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-      dest: /etc/yum.repos.d/tailscale.repo
+    - name: Set Tailscale repo
+      ansible.builtin.get_url:
+        url: https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        dest: /etc/yum.repos.d/tailscale.repo
+        mode: "0644"
 
-  - name: Install EPEL Repo
-    import_role:
-      name: robertdebock.epel
+    - name: Install EPEL Repo
+      ansible.builtin.import_role:
+        name: robertdebock.epel
 
-  - name: Install RPM Fusion Free
-    dnf:
-      name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
-      disable_gpg_check: yes
-      state: present
+    - name: Install RPM Fusion Free
+      ansible.builtin.dnf:
+        name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+        disable_gpg_check: true
+        state: present
 
-  - name: Install RPM Fusion Non-Free
-    dnf:
-      name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
-      disable_gpg_check: yes
-      state: present
+    - name: Install RPM Fusion Non-Free
+      ansible.builtin.dnf:
+        name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+        disable_gpg_check: true
+        state: present
 
-  - name: Set eID Repo
-    yum_repository:
-      name: eid
-      description: Slovensko.sk eID repo
-      file: eid
-      baseurl: https://www.salstar.sk/pub/fedora/{{ ansible_distribution_major_version }}/x86_64/
-      gpgkey: http://www.salstar.sk/pub/sagator/SAGATOR-GPG-KEY
+    - name: Set eID Repo
+      ansible.builtin.yum_repository:
+        name: eid
+        description: Slovensko.sk eID repo
+        file: eid
+        baseurl: https://www.salstar.sk/pub/fedora/{{ ansible_distribution_major_version }}/x86_64/
+        gpgkey: http://www.salstar.sk/pub/sagator/SAGATOR-GPG-KEY
 
-  - name: Google Cloud repo
-    yum_repository:
-      name: gcp
-      description: Google Cloud SDK
-      file: gcp
-      baseurl: https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
-      gpgkey:
-      - https://packages.cloud.google.com/yum/doc/yum-key.gpg
-      - https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    - name: Google Cloud repo
+      ansible.builtin.yum_repository:
+        name: gcp
+        description: Google Cloud SDK
+        file: gcp
+        baseurl: https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+        gpgkey:
+          - https://packages.cloud.google.com/yum/doc/yum-key.gpg
+          - https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 
-  - name: GitHub CLI
-    yum_repository:
-      name: gh-cli
-      description: GitHub CLI
-      file: gh-cli
-      baseurl:  https://cli.github.com/packages/rpm/
-      gpgkey:
-      - http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xc99b11deb97541f0
+    - name: GitHub CLI
+      ansible.builtin.yum_repository:
+        name: gh-cli
+        description: GitHub CLI
+        file: gh-cli
+        baseurl: https://cli.github.com/packages/rpm/
+        gpgkey:
+          - http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xc99b11deb97541f0
 
-######### Snap ########################
+  ######### Snap ########################
 
-  - name: Install snapd
-    package:
-      name: snapd
-      state: present
-    notify: start snapd
+    - name: Install snapd
+      ansible.builtin.package:
+        name: snapd
+        state: present
+      notify: Start snapd
 
-  - name: Flush handlers
-    meta: flush_handlers
+    - name: Flush handlers
+      ansible.builtin.meta: flush_handlers
 
-  - name: Create /snap for Snap calssic
-    file:
-      src: /var/lib/snapd/snap
-      dest: /snap
-      state: link
+    - name: Create /snap for Snap calssic
+      ansible.builtin.file:
+        src: /var/lib/snapd/snap
+        dest: /snap
+        state: link

@@ -1,152 +1,156 @@
 ---
 - name: System tuning
   hosts: laptop
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
   handlers:
-  - import_tasks: ../handlers/main.yml
+    - name: Import handlers
+      ansible.builtin.import_tasks: ../handlers/main.yml
   tasks:
 
-###### Terminal ###########################################
+  ###### Terminal ###########################################
 
-  - name: CLI history backward
-    lineinfile:
-      path: /etc/inputrc
-      regexp: ' history-search-backward$'
-      line: '"\e[A": history-search-backward'
+    - name: CLI history backward
+      ansible.builtin.lineinfile:
+        path: /etc/inputrc
+        regexp: ' history-search-backward$'
+        line: '"\e[A": history-search-backward'
 
-  - name: CLI history forward
-    lineinfile:
-      path: /etc/inputrc
-      regexp: ' history-search-forward'
-      line: '"\e[B": history-search-forward'
+    - name: CLI history forward
+      ansible.builtin.lineinfile:
+        path: /etc/inputrc
+        regexp: ' history-search-forward'
+        line: '"\e[B": history-search-forward'
 
-  - name: Create ~/.config/fish/conf.d/
-    file:
-      path: ~/.config/fish/conf.d/
-      state: directory
-      mode: 0755
-      recurse: yes
+    - name: Create ~/.config/fish/conf.d/
+      ansible.builtin.file:
+        path: ~/.config/fish/conf.d/
+        state: directory
+        mode: "0755"
+        recurse: true
 
-  - name: Copy fish config file
-    template:
-      src: templates/config.fish
-      dest: ~/.config/fish/config.fish
-      mode: 0600
-    become: no
+    - name: Copy fish config file
+      ansible.builtin.template:
+        src: templates/config.fish
+        dest: ~/.config/fish/config.fish
+        mode: "0600"
+      become: false
 
-  - name: Copy my fish config file
-    template:
-      src: templates/my.fish.j2
-      dest: ~/.config/fish/conf.d/my.fish
-      mode: 0600
-    become: no
+    - name: Copy my fish config file
+      ansible.builtin.template:
+        src: templates/my.fish.j2
+        dest: ~/.config/fish/conf.d/my.fish
+        mode: "0600"
+      become: false
 
-  - name: Copy my prompt
-    copy:
-      src: templates/my_prompt.json
-      dest: ~/.config/fish/.my_prompt.json
-      mode: 0600
-    become: no
+    - name: Copy my prompt
+      ansible.builtin.copy:
+        src: templates/my_prompt.json
+        dest: ~/.config/fish/.my_prompt.json
+        mode: "0600"
+      become: false
 
-  - name: Copy my fish abbreviations file
-    template:
-      src: templates/abbr.fish.j2
-      dest: ~/.config/fish/conf.d/abbr.fish
-      mode: 0600
-    become: no
+    - name: Copy my fish abbreviations file
+      ansible.builtin.template:
+        src: templates/abbr.fish.j2
+        dest: ~/.config/fish/conf.d/abbr.fish
+        mode: "0600"
+      become: false
 
-  - name: Copy gitconfig
-    copy:
-      src: files/gitconfig
-      dest: ~/.gitconfig
-      mode: 0600
-    become: no
+    - name: Copy gitconfig
+      ansible.builtin.copy:
+        src: files/gitconfig
+        dest: ~/.gitconfig
+        mode: "0600"
+      become: false
 
-###### DNS ################################################
+  ###### DNS ################################################
 
-  - name: Enable and start systemd-resolved
-    systemd:
-      name: systemd-resolved
-      enabled: yes
-      state: started
+    - name: Enable and start systemd-resolved
+      ansible.builtin.systemd:
+        name: systemd-resolved
+        enabled: true
+        state: started
 
-###### Docker #############################################
+  ###### Docker #############################################
 
-  - name: Docker custom config
-    template:
-      src: templates/docker_daemon.json.j2
-      dest: /etc/docker/daemon.json
-      mode: 0644
-    notify: restart docker
+    - name: Docker custom config
+      ansible.builtin.template:
+        src: templates/docker_daemon.json.j2
+        dest: /etc/docker/daemon.json
+        mode: "0644"
+      notify: Restart docker
 
-  - name: Eanble and start docker
-    systemd:
-      name: docker
-      enabled: yes
-      state: started
-    ### F32 is using cgroup v2. You may need  "GRUB_CMDLINE_LINUX= systemd.unified_cgroup_hierarchy=0" in /etc/default/grub + grub2-mkconfig
+    - name: Eanble and start docker
+      ansible.builtin.systemd:
+        name: docker
+        enabled: true
+        state: started
 
-  - name: Create a volume portainer_data
-    docker_volume:
-      name: portainer_data
+    - name: Create portainer_data volume
+      community.docker.docker_volume:
+        name: portainer_data
 
-  - name: portainer
-    docker_container:
-      name: portainer
-      image: portainer/portainer-ce:latest
-      command: -H unix:///var/run/docker.sock
-      container_default_behavior: compatibility
-      pull: yes
-      state: present
-      privileged: yes
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-        - portainer_data:/data
-      ports:
-        - "9000:9000"
-      env:
-        TZ: "CET"
+    - name: Portainer
+      community.docker.docker_container:
+        name: portainer
+        image: portainer/portainer-ce:latest
+        command: -H unix:///var/run/docker.sock
+        container_default_behavior: compatibility
+        pull: true
+        state: present
+        privileged: true
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+          - portainer_data:/data
+        ports:
+          - "9000:9000"
+        env:
+          TZ: "CET"
 
-####### Gnome #############################################
+  ####### Gnome #############################################
 
-  - name: Xorg vs. Wayland
-    lineinfile:
-      path: /etc/gdm/custom.conf
-      regexp: 'WaylandEnable='
-      line: 'WaylandEnable={{ wayland }}'
+    - name: Xorg vs. Wayland
+      ansible.builtin.lineinfile:
+        path: /etc/gdm/custom.conf
+        regexp: 'WaylandEnable='
+        line: 'WaylandEnable={{ wayland }}'
 
-###### Kernel config ######################################
+  ###### Kernel config ######################################
 
-  - ansible.posix.sysctl:
-      name: fs.inotify.max_queued_events
-      value: '524288'
-      sysctl_file: /etc/sysctl.d/99-sysctl.conf
-      reload: no
+    - name: Enable kernel config
+      ansible.posix.sysctl:
+        name: fs.inotify.max_queued_events
+        value: '524288'
+        sysctl_file: /etc/sysctl.d/99-sysctl.conf
+        reload: false
 
-  - ansible.posix.sysctl:
-      name: fs.inotify.max_queued_events
-      value: '524288'
-      sysctl_file: /etc/sysctl.d/99-sysctl.conf
-      reload: no
+    - name: Enable kernel config
+      ansible.posix.sysctl:
+        name: fs.inotify.max_queued_events
+        value: '524288'
+        sysctl_file: /etc/sysctl.d/99-sysctl.conf
+        reload: false
 
-  - ansible.posix.sysctl:
-      name: fs.inotify.max_user_instances
-      value: '512'
-      sysctl_file: /etc/sysctl.d/99-sysctl.conf
-      reload: no
+    - name: Enable kernel config
+      ansible.posix.sysctl:
+        name: fs.inotify.max_user_instances
+        value: '512'
+        sysctl_file: /etc/sysctl.d/99-sysctl.conf
+        reload: false
 
-  - ansible.posix.sysctl:
-      name: fs.inotify.max_user_watches
-      value: '524288'
-      sysctl_file: /etc/sysctl.d/99-sysctl.conf
-      reload: no
+    - name: Enable kernel config
+      ansible.posix.sysctl:
+        name: fs.inotify.max_user_watches
+        value: '524288'
+        sysctl_file: /etc/sysctl.d/99-sysctl.conf
+        reload: false
 
-###### Udev rules #########################################
+  ###### Udev rules #########################################
 
-  - name: Copy custom udev rules
-    copy:
-      src: files/90-mikes-udev.rules
-      dest: /etc/udev/rules.d/90-mikes-udev.rules
-      mode: 0644
-    notify: reload udev
+    - name: Copy custom udev rules
+      ansible.builtin.copy:
+        src: files/90-mikes-udev.rules
+        dest: /etc/udev/rules.d/90-mikes-udev.rules
+        mode: "0644"
+      notify: Reload udev

@@ -1,16 +1,16 @@
 ---
-- name: start snapd
-  become: yes
-  systemd:
+- name: Start snapd
+  become: true
+  ansible.builtin.systemd:
     name: snapd
     state: started
 
-- name: restart docker
-  become: yes
-  systemd:
+- name: Restart docker
+  become: true
+  ansible.builtin.systemd:
     name: docker
     state: restarted
 
-- name: reload udev
-  become: yes
-  shell: udevadm control --reload-rules && udevadm trigger
+- name: Reload udev
+  become: true
+  ansible.builtin.shell: udevadm control --reload-rules && udevadm trigger

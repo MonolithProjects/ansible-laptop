@@ -1,5 +1,7 @@
 exclude_paths:
-  roles/
+  - .cache/
+  - .git/
+  - roles/
 
 skip_list:
   - '305'
