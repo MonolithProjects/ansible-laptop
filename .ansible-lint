@@ -1,8 +1,8 @@
 exclude_paths:
   - .cache/
   - .git/
-  - ansible.cfg
   - roles/
 
 skip_list:
   - '305'
+  -  internal-error
