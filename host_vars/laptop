@@ -15,7 +15,9 @@ brew_formulae:
   - hugo
   - k3d
   - kubectx
+  - kubefirst
   - kubernetes-cli
+  - mkcert
   - nerdctl
   - oh-my-posh
   - terraform-docs
@@ -63,7 +65,6 @@ dnf_packages:
   - python3-smbc
   - qemu-kvm
   - seahorse
-  - seadrive-gui
   - screenfetch
   - sshuttle
   - solaar
@@ -84,6 +85,7 @@ dnf_packages:
   - youtube-dl
   - yubikey-personalization-gui
   - ShellCheck
+  - syncthing
 
 dnf_packages_absent: []
 

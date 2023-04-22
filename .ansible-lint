@@ -1,8 +1,10 @@
 exclude_paths:
+  - ../
   - .cache/
   - .git/
+  - .github/
   - roles/
 
 skip_list:
   - '305'
-  -  internal-error
+  - internal-error
