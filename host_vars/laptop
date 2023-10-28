@@ -17,6 +17,7 @@ brew_formulae:
   - kubectx
   - kubefirst
   - kubernetes-cli
+  - lazydocker
   - mkcert
   - nerdctl
   - oh-my-posh

@@ -14,3 +14,4 @@
 - name: Reload udev
   become: true
   ansible.builtin.shell: udevadm control --reload-rules && udevadm trigger
+  changed_when: false

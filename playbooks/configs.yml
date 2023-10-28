@@ -98,7 +98,7 @@
         command: -H unix:///var/run/docker.sock
         container_default_behavior: compatibility
         pull: true
-        state: present
+        state: started
         privileged: true
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
@@ -154,3 +154,12 @@
         dest: /etc/udev/rules.d/90-mikes-udev.rules
         mode: "0644"
       notify: Reload udev
+
+####### Terraform ##########################################
+
+    - name: Create directory for Terraform plugins
+      ansible.builtin.file:
+        path: ~/.terraform.d/plugin-cache
+        state: directory
+        mode: "0700"
+        recurse: true

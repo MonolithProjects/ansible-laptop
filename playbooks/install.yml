@@ -52,10 +52,6 @@
       ansible.builtin.import_role:
         name: monolithprojects.homebrew
 
-    - name: Install Kubeseal client
-      ansible.builtin.import_role:
-        name: andrewrothstein.kubeseal
-
     - name: Install k9s
       ansible.builtin.import_role:
         name: andrewrothstein.k9s
