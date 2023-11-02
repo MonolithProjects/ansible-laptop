@@ -25,7 +25,6 @@ brew_formulae:
   - tfsec
 
 dnf_packages:
-  # - azure-cli
   - bpytop
   - brave-keyring
   - brave-browser
@@ -56,7 +55,6 @@ dnf_packages:
   - libvirt-daemon-kvm
   - lolcat
   - make
-  # - moby-engine
   - mysql
   - neofetch
   - nomad
