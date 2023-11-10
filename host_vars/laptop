@@ -41,7 +41,6 @@ dnf_packages:
   - gimp
   - git
   - golang
-  - google-cloud-sdk
   - gnome-tweak-tool
   - guvcview
   - h264enc
