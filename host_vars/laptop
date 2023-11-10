@@ -89,7 +89,6 @@ dnf_packages:
 dnf_packages_absent: []
 
 snap_packages:
-  - spotify
   - yq
 
 snap_packages_classic:
