@@ -29,7 +29,6 @@ dnf_packages:
   - brave-keyring
   - brave-browser
   - code
-  - consul
   - crictl
   - dnf-plugin-system-upgrade
   - eidklient
@@ -56,7 +55,6 @@ dnf_packages:
   - make
   - mysql
   - neofetch
-  - nomad
   - openconnect
   - openldap-clients
   - pulseeffects
@@ -68,10 +66,8 @@ dnf_packages:
   - sshuttle
   - solaar
   - slack
-  - steam
   - system-config-printer
   - tailscale
-  - telegram-desktop
   # - terraform  #asdf
   - thefuck
   - tilix
@@ -92,6 +88,7 @@ snap_packages:
   - yq
 
 snap_packages_classic:
+  - obsidian
   - shotcut
 
 pip_packages:
