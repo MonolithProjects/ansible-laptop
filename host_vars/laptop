@@ -82,7 +82,9 @@ dnf_packages:
   - ShellCheck
   - syncthing
 
-dnf_packages_absent: []
+dnf_packages_absent:
+  - firefox
+  - google-chrome-stable
 
 snap_packages:
   - yq
