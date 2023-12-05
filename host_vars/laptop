@@ -16,6 +16,7 @@ brew_formulae:
   - k3d
   - kubectx
   - kubefirst
+  - kubent
   - kubernetes-cli
   - lazydocker
   - mkcert
