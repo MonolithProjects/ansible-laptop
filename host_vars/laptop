@@ -88,6 +88,8 @@ dnf_packages_absent:
   - google-chrome-stable
 
 snap_packages:
+  - mattermost-desktop
+  - telegram-desktop
   - yq
 
 snap_packages_classic:
