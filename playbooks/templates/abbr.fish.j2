@@ -25,4 +25,5 @@ if status --is-interactive
   abbr -a -g tfd "terraform destroy"
   abbr -a -g unsetk "set -e KUBECONFIG"
   abbr -a -g update "ANSIBLE_CONFIG=~/Documents/HOME_PROJECTS/ansible-laptop/ansible.cfg ansible-playbook ~/Documents/HOME_PROJECTS/ansible-laptop/site.yml -i ~/Documents/HOME_PROJECTS/ansible-laptop/inventory.yml"
+  abbr -a -g update-config "ANSIBLE_CONFIG=~/Documents/HOME_PROJECTS/ansible-laptop/ansible.cfg ansible-playbook ~/Documents/HOME_PROJECTS/ansible-laptop/site.yml -i ~/Documents/HOME_PROJECTS/ansible-laptop/inventory.yml" --tags config
 end
