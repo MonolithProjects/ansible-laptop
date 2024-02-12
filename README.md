@@ -21,3 +21,7 @@ run `ansible-playbook site.yml`
 | update | Update or Install new software packages |
 | config | Config changes |
 | additions | Additional software dependent on tools in `install` part |
+
+## Gnome extensions
+
+I don not backup them. But it should be enough to backup and restore `~/.local/share/gnome-shell/extensions` directory
