@@ -64,6 +64,11 @@
         mode: "0600"
       become: false
 
+    - name: Set fish as default shell for current user
+      ansible.builtin.user:
+        name: "{{ lookup('env', 'USER') }}"
+        shell: /bin/fish
+
   ###### DNS ################################################
 
     - name: Enable and start systemd-resolved
