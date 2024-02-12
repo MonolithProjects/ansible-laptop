@@ -27,6 +27,7 @@
         file: vscode
         gpgkey: https://packages.microsoft.com/keys/microsoft.asc
         baseurl: https://packages.microsoft.com/yumrepos/vscode
+        enabled: true
 
     - name: Set Slack Repo
       ansible.builtin.yum_repository:
@@ -37,6 +38,7 @@
         gpgkey: https://packagecloud.io/slacktechnologies/slack/gpgkey
         baseurl: "https://packagecloud.io/slacktechnologies/slack/{{ ansible_distribution | lower }}/\
         {{ ansible_distribution_major_version }}/{{ ansible_machine }}"
+        enabled: true
 
     - name: Set Docker package Repo
       ansible.builtin.yum_repository:
@@ -45,6 +47,7 @@
         file: docker
         gpgkey: https://download.docker.com/linux/fedora/gpg
         baseurl: https://download.docker.com/linux/fedora/31/$basearch/stable
+        enabled: true
 
     # - name: Set VirtualBox Repo
     #   ansible.builtin.yum_repository:
@@ -61,6 +64,7 @@
         file: brave-browser
         gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
         baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+        enabled: true
 
     - name: Set Azure Repo
       ansible.builtin.yum_repository:
@@ -69,6 +73,7 @@
         file: azure-cli
         gpgkey: https://packages.microsoft.com/keys/microsoft.asc
         baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+        enabled: true
 
     - name: Set Yarn Repo
       ansible.builtin.yum_repository:
@@ -77,6 +82,7 @@
         file: yarn
         gpgkey: https://dl.yarnpkg.com/rpm/pubkey.gpg
         baseurl: https://dl.yarnpkg.com/rpm/
+        enabled: true
 
     - name: Enabled Gitflow repo
       ansible.builtin.yum_repository:
@@ -85,6 +91,7 @@
         file: copr:copr.fedorainfracloud.org:elegos:gitflow.repo
         gpgkey: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/pubkey.gpg
         baseurl: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/fedora-$releasever-$basearch/
+        enabled: true
 
     - name: Set HasniCorp Repo
       ansible.builtin.get_url:

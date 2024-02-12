@@ -93,6 +93,7 @@ snap_packages:
   - mattermost-desktop
   - telegram-desktop
   - yq
+  - zoom
 
 snap_packages_classic:
   - obsidian
