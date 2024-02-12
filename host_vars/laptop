@@ -32,7 +32,7 @@ dnf_packages:
   - code
   - crictl
   - dnf-plugin-system-upgrade
-  - eidklient
+  # - eidklient
   - fish
   - fzf
   - chromium
