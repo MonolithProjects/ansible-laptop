@@ -140,13 +140,9 @@
           - https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 
     - name: GitHub CLI
-      ansible.builtin.yum_repository:
-        name: gh-cli
-        description: GitHub CLI
-        file: gh-cli
-        baseurl: https://cli.github.com/packages/rpm/
-        gpgkey:
-          - http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xc99b11deb97541f0
+      ansible.builtin.command:
+        cmd: dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+      changed_when: false
 
   ######### Snap ########################
 
