@@ -66,6 +66,11 @@
         baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
         enabled: true
 
+    - name: Import a key for Brave Repo
+      ansible.builtin.rpm_key:
+        state: present
+        key: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+
     - name: Set Azure Repo
       ansible.builtin.yum_repository:
         name: azure-cli
