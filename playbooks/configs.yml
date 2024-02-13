@@ -22,6 +22,15 @@
         regexp: ' history-search-forward'
         line: '"\e[B": history-search-forward'
 
+  ###### Fish shell #########################################
+
+    - name: Create directory for fish config
+      ansible.builtin.file:
+        path: ~/.config/fish/
+        state: directory
+        mode: "0755"
+        recurse: true
+
     - name: Create ~/.config/fish/conf.d/
       ansible.builtin.file:
         path: ~/.config/fish/conf.d/
