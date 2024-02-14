@@ -8,10 +8,10 @@ brew_formulae:
   - dive
   - glow
   - hadolint
-  - havener
+  # - havener
   - helm
   - helmfile
-  - homeport/tap/havener
+  # - homeport/tap/havener
   - hugo
   - k3d
   - kubectx
