@@ -60,6 +60,7 @@ dnf_packages:
   - openconnect
   - openldap-clients
   - pulseeffects
+  - puppet
   - python3-devel
   - python3-smbc
   - qemu-kvm
