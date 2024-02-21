@@ -30,6 +30,7 @@ dnf_packages:
   - brave-keyring
   - brave-browser
   - code
+  - clustershell
   - crictl
   - dnf-plugin-system-upgrade
   # - eidklient
