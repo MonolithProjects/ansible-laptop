@@ -10,7 +10,16 @@ set -gx HELM_DIFF_COLOR true
 {# set -gx PATH $PATH /home/linuxbrew/.linuxbrew/bin #}
 {# source ~/.asdf/asdf.fish #}
 
-function awsve
+function resetmail
+if [ -n "$argv" ]
+curl -d "username=$argv&external=true" -H "Content-Type: application/x-www-form-urlencoded" -X PUT
+https://pwtools.embl.de/reset
+else
+echo "Provide username."
+end
+end
+
+{# function awsve
   set AWS_VAULT
   if [ $argv != pixel_cn ] && [ $argv != clear ]
     aws-vault exec $argv --
@@ -21,7 +30,7 @@ function awsve
       set -e AWS_SESSION_TOKEN AWS_SECURITY_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN
     end
   end
-end
+end #}
 
 {# function fish_prompt
     set --local exit_code $status  # save previous exit code
@@ -35,7 +44,7 @@ end
     set _pure_fresh_session false
 end #}
 
-function kubectl_status
+{# function kubectl_status
   [ -z "$KUBECTL_PROMPT_ICON" ]; and set -l KUBECTL_PROMPT_ICON "k8s:"
   [ -z "$KUBECTL_PROMPT_SEPARATOR" ]; and set -l KUBECTL_PROMPT_SEPARATOR "/"
   set -l config $KUBECONFIG
@@ -69,6 +78,6 @@ function awsvault_status
     echo (set_color blue)$AWSVAULT_PROMPT_ICON(set_color brblue)"$AWS_VAULT"
     return
   end
-end
+end #}
 
 #end
