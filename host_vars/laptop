@@ -86,6 +86,7 @@ dnf_packages:
   - yubikey-personalization-gui
   - ShellCheck
   - syncthing
+  - xclip
 
 dnf_packages_absent:
   - firefox
