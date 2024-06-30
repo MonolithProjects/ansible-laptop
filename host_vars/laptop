@@ -13,6 +13,7 @@ brew_formulae:
   - helmfile
   # - homeport/tap/havener
   - hugo
+  - jnv
   - k3d
   - kubectx
   - kubefirst
