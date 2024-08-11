@@ -27,6 +27,7 @@ brew_formulae:
   - tfsec
 
 dnf_packages:
+  - bat
   - bpytop
   - brave-keyring
   - brave-browser
