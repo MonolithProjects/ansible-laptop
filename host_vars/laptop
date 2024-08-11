@@ -35,6 +35,7 @@ dnf_packages:
   - crictl
   - dnf-plugin-system-upgrade
   # - eidklient
+  - eza
   - fish
   - fzf
   - chromium
