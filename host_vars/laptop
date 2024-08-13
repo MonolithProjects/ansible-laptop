@@ -1,5 +1,5 @@
 wayland: "true" #string
-docker_bip: "172.99.0.1/16"
+#docker_bip: "172.99.0.1/16"
 docker_root_path: /home/docker
 
 brew_formulae:
@@ -10,7 +10,6 @@ brew_formulae:
   - hadolin
   - helm
   - helmfile
-  # - homeport/tap/havener
   - hugo
   - jnv
   - k3d
