@@ -7,8 +7,7 @@ brew_formulae:
   - aws-vault
   - dive
   - glow
-  - hadolint
-  # - havener
+  - hadolin
   - helm
   - helmfile
   # - homeport/tap/havener
