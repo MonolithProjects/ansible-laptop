@@ -1,5 +1,5 @@
 wayland: "true" #string
-docker_bip: "172.99.0.1/16"
+#docker_bip: "172.99.0.1/16"
 docker_root_path: /home/docker
 
 brew_formulae:
@@ -7,11 +7,9 @@ brew_formulae:
   - aws-vault
   - dive
   - glow
-  - hadolint
-  # - havener
+  - hadolin
   - helm
   - helmfile
-  # - homeport/tap/havener
   - hugo
   - jnv
   - k3d
@@ -27,6 +25,7 @@ brew_formulae:
   - tfsec
 
 dnf_packages:
+  - bat
   - bpytop
   - brave-keyring
   - brave-browser
@@ -35,6 +34,7 @@ dnf_packages:
   - crictl
   - dnf-plugin-system-upgrade
   # - eidklient
+  - eza
   - fish
   - fzf
   - chromium
