@@ -64,6 +64,7 @@ dnf_packages:
   - pulseeffects
   - puppet
   - python3-devel
+  - python3-libdnf5
   - python3-smbc
   - qemu-kvm
   - seahorse
@@ -107,7 +108,7 @@ snap_packages_classic:
 
 pip_packages:
   - ansible-lint
-  - checkov
+  # - checkov
   - flake8
   - glances
   # - grafana_wtf

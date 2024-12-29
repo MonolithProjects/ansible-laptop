@@ -10,7 +10,10 @@ host vars
 
 ## How to
 
-run `ansible-playbook site.yml`
+```sh
+ansible-galaxy collection install community.general community.docker
+ansible-playbook site.yml
+```
 
 ## Available tags
 

@@ -9,9 +9,9 @@
       ansible.builtin.import_role:
         name: geerlingguy.pip
 
-    - name: Install Docker
-      ansible.builtin.import_role:
-        name: geerlingguy.docker
+    # - name: Install Docker
+    #   ansible.builtin.import_role:
+    #     name: geerlingguy.docker
 
     - name: Uninstall DNF Packages
       ansible.builtin.package:
@@ -24,11 +24,11 @@
         state: present
 
     - name: Install Snap Packages
-      community.general.packaging.os.snap:
+      community.general.snap:
         name: "{{ snap_packages }}"
 
     - name: Install Snap Packages (Classic)
-      community.general.packaging.os.snap:
+      community.general.snap:
         name: "{{ snap_packages_classic }}"
         classic: true
 

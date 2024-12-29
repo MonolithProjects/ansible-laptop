@@ -89,15 +89,6 @@
         baseurl: https://dl.yarnpkg.com/rpm/
         enabled: true
 
-    - name: Enabled Gitflow repo
-      ansible.builtin.yum_repository:
-        name: elegos/gitflow
-        description: Gitflow repo
-        file: copr:copr.fedorainfracloud.org:elegos:gitflow.repo
-        gpgkey: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/pubkey.gpg
-        baseurl: https://download.copr.fedorainfracloud.org/results/elegos/gitflow/fedora-$releasever-$basearch/
-        enabled: true
-
     - name: Set HasniCorp Repo
       ansible.builtin.get_url:
         url: https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
@@ -126,6 +117,11 @@
         disable_gpg_check: true
         state: present
 
+    - name: Set Ghostty Repo
+      community.general.copr:
+        name: pgdev/ghostty
+        state: enabled
+
     # - name: Set eID Repo
     #   ansible.builtin.yum_repository:
     #     name: eid
@@ -146,7 +142,7 @@
 
     - name: GitHub CLI
       ansible.builtin.command:
-        cmd: dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+        cmd: dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo --overwrite
       changed_when: false
 
   ######### Snap ########################
