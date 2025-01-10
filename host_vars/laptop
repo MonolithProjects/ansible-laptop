@@ -13,6 +13,7 @@ brew_formulae:
   - hugo
   - jnv
   - k3d
+  - k9s
   - kubectx
   - kubefirst
   - kubent
@@ -95,7 +96,7 @@ dnf_packages_absent:
   - google-chrome-stable
 
 snap_packages:
-  - k9s
+  # - k9s
   - mattermost-desktop
   - spotify
   - telegram-desktop
