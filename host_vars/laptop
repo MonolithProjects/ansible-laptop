@@ -30,10 +30,10 @@ brew_formulae:
 
 dnf_packages:
   - bat
+  - below
   - bpytop
   - brave-keyring
   - brave-browser
-  - code
   - clustershell
   - crictl
   - dnf-plugin-system-upgrade
@@ -93,6 +93,7 @@ dnf_packages:
   - ShellCheck
   - syncthing
   - xclip
+  - zed
 
 dnf_packages_absent:
   - firefox
