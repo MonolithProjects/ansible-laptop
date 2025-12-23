@@ -6,6 +6,7 @@ brew_formulae:
   - act
   - aws-vault
   - dive
+  - etcd
   - glow
   - hadolin
   - helm
@@ -18,10 +19,12 @@ brew_formulae:
   - kubefirst
   - kubent
   - kubernetes-cli
+  - kustomize
   - lazydocker
   - mkcert
   - nerdctl
   - oh-my-posh
+  - packer
   - terraform-docs
   - tfsec
 

@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v6.0.0
     hooks:
       - id: check-yaml
         args: [--allow-multiple-documents]
@@ -11,8 +11,9 @@ repos:
       - id: check-merge-conflict
 
   - repo: https://github.com/ansible/ansible-lint.git
-    rev: v6.22.1
+    rev: v25.12.2
     hooks:
       - id: ansible-lint
         files: \.(yaml|yml)$
         exclude: ^roles
+        language_version: python3.14
