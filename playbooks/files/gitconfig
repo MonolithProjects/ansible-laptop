@@ -5,4 +5,6 @@
 [includeIf "gitdir:~/Documents/LABLABS/"]
 	path = ~/Documents/LABLABS/.gitconfig-lablabs
 [includeIf "gitdir:~/Documents/HOME/"]
-  path = ~/Documents/HOME/.gitconfig-home
+        path = ~/Documents/HOME/.gitconfig-home
+[includeIf "gitdir:~/Documents/EMBL/"]
+        path = ~/Documents/EMBL/.gitconfig-embl
